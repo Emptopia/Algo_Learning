@@ -21,10 +21,18 @@ void test01()
     cout << endl;
 }
 
+void test02()
+{
+    Solution sln;
+    vector<int> prices = { 3,4,5,2,7 };
+    cout << "最大利润为：" << sln.maxProfit(prices) << endl;
+}
+
+
 int main()
 {
-	test01();
-
+	//test01();
+    test02();
 
 
 
