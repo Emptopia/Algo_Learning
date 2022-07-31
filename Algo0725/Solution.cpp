@@ -4,6 +4,14 @@
 using namespace std;
 #include"Solution.h"
 
+void Solution::printArray(const vector<int>& v)
+{
+    for (vector<int>::const_iterator it = v.begin(); it != v.end(); it++)
+    {
+        cout << *it << " ";
+    }
+    cout << endl;
+}
 
 int Solution::removeDuplicates(vector<int>& nums)
 {
@@ -46,5 +54,24 @@ int Solution::maxProfit(vector<int>& prices)
             profit += (prices[i + 1] - prices[i]);
     }
     return profit;
+}
+
+void Solution::rotateArray(vector<int>& nums, int k)
+{
+    if (nums.empty() || k<0)
+        return;
+    int mink = k % nums.size();
+    cout << mink << endl;
+    vector<int> nums2(nums.size() + mink);
+    for (int i = 0; i < nums.size(); i++)
+    {
+        nums2[i + mink] = nums[i];
+    }
+    for (int i = 0; i < mink; i++)
+    {
+        nums2[i] = nums2[nums.size() + i];
+    }
+    nums2.resize(nums.size());
+    nums = nums2;
 }
 

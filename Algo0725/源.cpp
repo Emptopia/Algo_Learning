@@ -28,12 +28,20 @@ void test02()
     cout << "最大利润为：" << sln.maxProfit(prices) << endl;
 }
 
+void test03()
+{
+    vector<int> nums = { 1,2 };
+    int k = 3;
+    Solution sln;
+    sln.rotateArray(nums, k);
+    sln.printArray(nums);
+}
 
 int main()
 {
 	//test01();
-    test02();
-
+    //test02();
+    test03();
 
 
 
