@@ -8,6 +8,6 @@ class Solution
 public:
 
 	bool containsDuplicate(vector<int>& nums);
-
+	int singleNumber(vector<int>& nums);
 
 };

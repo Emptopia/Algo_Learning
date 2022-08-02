@@ -11,15 +11,19 @@ void test01()
 		cout << "true" << endl;
 	else
 		cout << "false" << endl;
-
-	
 }
 
+void test02()
+{
+	Solution sln;
+	vector<int>nums = { 4,1,2,1,2 };
+	cout << sln.singleNumber(nums) << endl;
+}
 
 int main()
 {
-	test01();
-
+	//test01();
+	test02();
 
 	system("pause");
 	return 0;

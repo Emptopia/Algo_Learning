@@ -14,3 +14,14 @@ bool Solution::containsDuplicate(vector<int>& nums)
 	
 	return false;
 }
+
+int Solution::singleNumber(vector<int>& nums)
+{
+	int sNum = 0;
+	for (int i = 0; i < nums.size(); i++)
+	{
+		sNum = sNum ^ nums[i];
+		cout << sNum << endl;
+	}
+	return sNum;
+}
