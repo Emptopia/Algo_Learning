@@ -1,6 +1,15 @@
 #include"Solution.h"
 #include<algorithm>
 
+void Solution::printVector(vector<int>& nums)
+{
+	for (vector<int>::iterator it = nums.begin(); it != nums.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
 bool Solution::containsDuplicate(vector<int>& nums)
 {
 	if (nums.empty())
@@ -24,4 +33,39 @@ int Solution::singleNumber(vector<int>& nums)
 		cout << sNum << endl;
 	}
 	return sNum;
+}
+
+//int Solution::singleNumber(vector<int>& nums)					//很麻烦的排序法
+//{
+//	sort(nums.begin(),nums.end());
+//	vector<int>::iterator it = nums.begin();
+//	while (true)
+//	{
+//		it = adjacent_find(nums.begin(), nums.end());
+//		if (it == nums.end())
+//			break;
+//		//cout << "删除相邻" << *it << endl;
+//		it = nums.erase(it);
+//		nums.erase(it);
+//	}
+//	//cout << "返回" << *(nums.begin()) << endl;
+//	return*(nums.begin());
+//}
+
+
+vector<int> Solution::intersect(vector<int>& nums1, vector<int>& nums2)
+{
+	vector<int>::iterator pos;
+	vector<int>nums3;
+	while (!nums1.empty())
+	{
+		pos = find(nums2.begin(), nums2.end(), *(nums1.begin()));
+		if (pos != nums2.end())
+		{
+			nums3.push_back(*pos);
+			nums2.erase(pos);
+		}
+		nums1.erase(nums1.begin());
+	}
+	return nums3;
 }
