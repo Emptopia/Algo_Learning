@@ -34,11 +34,21 @@ void test03()
 	sln.printVector(nums3);
 }
 
+void test04()
+{
+	Solution sln;
+	vector<int>digits = { 4,3,2,1 };
+	vector<int>res = sln.plusOne(digits);
+	sln.printVector(res);
+
+}
+
 int main()
 {
 	//test01();
 	//test02();
-	test03();
+	//test03();
+	test04();
 	system("pause");
 	return 0;
 }

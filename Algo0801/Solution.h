@@ -10,4 +10,5 @@ public:
 	bool containsDuplicate(vector<int>& nums);
 	int singleNumber(vector<int>& nums);
 	vector<int> intersect(vector<int>& nums1, vector<int>& nums2);
+	vector<int> plusOne(vector<int>& digits);
 };
