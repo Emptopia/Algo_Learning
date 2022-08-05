@@ -43,12 +43,22 @@ void test04()
 
 }
 
+void test05()
+{
+	Solution sln;
+	vector<int>nums = { 0, 1, 0, 3, 12 };
+	sln.moveZeroes(nums);
+	sln.printVector(nums);
+
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	test05();
 	system("pause");
 	return 0;
 }
