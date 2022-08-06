@@ -52,13 +52,26 @@ void test05()
 
 }
 
+void test06()
+{
+	Solution sln;
+	vector<int>nums = { 2,7,11,15 };
+	int target = 9;
+	vector<int>nums2;
+
+	nums2 = sln.twoSum(nums, target);
+	sln.printVector(nums2);
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
 	//test04();
-	test05();
+	//test05();
+	test06();
+
 	system("pause");
 	return 0;
 }

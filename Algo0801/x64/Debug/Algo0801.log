@@ -1,2 +1,5 @@
-﻿  源.cpp
+﻿  Solution.cpp
+D:\c++_project\AlgorithmLerning\Algo0801\Solution.cpp(74,2): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  源.cpp
+  正在生成代码...
   Algo0801.vcxproj -> D:\c++_project\AlgorithmLerning\Algo0801\x64\Debug\Algo0801.exe
