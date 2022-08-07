@@ -4,6 +4,8 @@ using namespace std;
 #include<vector>
 #include<algorithm>
 #include<unordered_map>
+#include<set>
+
 
 class Solution
 {
@@ -16,4 +18,6 @@ public:
 	vector<int> plusOne(vector<int>& digits);
 	void moveZeroes(vector<int>& nums);
 	vector<int> twoSum(vector<int>& nums, int target);
+	bool isValidSudoku(vector<vector<char>>& board);
+
 };
