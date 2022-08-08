@@ -148,27 +148,62 @@ vector<int> Solution::twoSum(vector<int>& nums, int target)
 
 bool Solution::isValidSudoku(vector<vector<char>>& board)
 {
-	int rows[9][9];
-	int columns[9][9];
+	int row[9][9];
+	int column[9][9];
 	int subboxes[3][3][9];
-
-	memset(rows, 0, sizeof(rows));
-	memset(columns, 0, sizeof(columns));
+	memset(row, 0, sizeof(row));
+	memset(column, 0, sizeof(column));
 	memset(subboxes, 0, sizeof(subboxes));
-	for (int i = 0; i < 9; i++) {
-		for (int j = 0; j < 9; j++) {
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+		{
 			char c = board[i][j];
-			if (c != '.') {
+			if (c != '.')
+			{
 				int index = c - '0' - 1;
-				rows[i][index]++;
-				columns[j][index]++;
+				row[i][index]++;
+				column[j][index]++;
 				subboxes[i / 3][j / 3][index]++;
-				if (rows[i][index] > 1 || columns[j][index] > 1 || subboxes[i / 3][j / 3][index] > 1) {
+				if (row[i][index] > 1 || column[j][index] > 1 || subboxes[i / 3][j / 3][index] > 1)
 					return false;
-				}
 			}
 		}
 	}
 	return true;
+
+
+
+
+
+
+
+
+
+
+
+
+	//int rows[9][9];
+	//int columns[9][9];
+	//int subboxes[3][3][9];
+
+	//memset(rows, 0, sizeof(rows));
+	//memset(columns, 0, sizeof(columns));
+	//memset(subboxes, 0, sizeof(subboxes));
+	//for (int i = 0; i < 9; i++) {
+	//	for (int j = 0; j < 9; j++) {
+	//		char c = board[i][j];
+	//		if (c != '.') {
+	//			int index = c - '0' - 1;			//此处'5'-'0'的ascii码值，即为5的int值，数字有1-9，对应index有0-8，故-1
+	//			rows[i][index]++;
+	//			columns[j][index]++;
+	//			subboxes[i / 3][j / 3][index]++;
+	//			if (rows[i][index] > 1 || columns[j][index] > 1 || subboxes[i / 3][j / 3][index] > 1) {
+	//				return false;
+	//			}
+	//		}
+	//	}
+	//}
+	//return true;
 
 }
