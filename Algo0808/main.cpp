@@ -19,10 +19,21 @@ void test01()
 
 }
 
+void test02()
+{
+	Solution sln;
+
+	vector<char>s = {'h', 'e', 'l', 'l', 'o'};
+	sln.reverseString(s);
+	sln.printVector(s);
+
+
+}
 
 int main()
 {
-	test01();
+	//test01();
+	test02();
 
 	system("pause");
 	return 0;
