@@ -26,15 +26,20 @@ void test02()
 	vector<char>s = {'h', 'e', 'l', 'l', 'o'};
 	sln.reverseString(s);
 	sln.printVector(s);
+}
 
-
+void test03()
+{
+	Solution sln;
+	int x = 120;
+	cout << sln.reverse(x) << endl;
 }
 
 int main()
 {
 	//test01();
-	test02();
-
+	//test02();
+	test03();
 	system("pause");
 	return 0;
 }

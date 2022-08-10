@@ -13,6 +13,6 @@ public:
 
 	void rotate(vector<vector<int>>& matrix);
 	void reverseString(vector<char>& s);
-
+	int reverse(int x);
 };
 

@@ -66,3 +66,19 @@ void Solution::reverseString(vector<char>& s)
 		s[s.size() - 1 - i] = temp;
 	}
 }
+
+int Solution::reverse(int x) 
+{
+	int res = 0;
+	while (x != 0)
+	{
+		if (res > 214748364 || res < -214748364)				//int 取值：-2147483647~2147483647	防止后续*10越界
+			return 0;
+		int t = x % 10;
+		int newRes = res * 10 + t;
+		x = x / 10;
+		res = newRes;
+	}
+	return res;
+
+}
