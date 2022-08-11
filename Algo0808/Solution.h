@@ -3,7 +3,7 @@ using namespace std;
 #include<iostream>
 #include<vector>
 #include<algorithm>
-
+#include<unordered_map>
 class Solution
 {
 public:
@@ -14,5 +14,6 @@ public:
 	void rotate(vector<vector<int>>& matrix);
 	void reverseString(vector<char>& s);
 	int reverse(int x);
+	int firstUniqChar(string s);
 };
 

@@ -35,11 +35,19 @@ void test03()
 	cout << sln.reverse(x) << endl;
 }
 
+void test04()
+{
+	Solution sln;
+	string s = "loveleetcode";
+	cout << sln.firstUniqChar(s) << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
-	test03();
+	//test03();
+	test04();
 	system("pause");
 	return 0;
 }

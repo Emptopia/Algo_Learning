@@ -82,3 +82,39 @@ int Solution::reverse(int x)
 	return res;
 
 }
+
+int Solution::firstUniqChar(string s)
+{
+	//自己写的
+	//for (int left = 0; left < s.size(); left++)
+	//{
+	//	bool uniq = true;
+	//	for (int right = 0; right < s.size(); right++)
+	//	{
+	//		if (s[left] == s[right] && left != right)
+	//		{
+	//			uniq = false;
+	//			break;
+	//		}
+	//	}
+	//	if (uniq == true)
+	//		return left;
+	//}
+	//return -1;
+
+	//官方
+	unordered_map<int, int> frequency;
+	for (char ch : s)			//此处相当于for( int ch = 0; ch < s.size(); ch++)		
+	{
+		++frequency[ch];			//此处是将value为ch的key++
+	}
+	for (int i = 0; i < s.size(); ++i) 
+	{
+		if (frequency[s[i]] == 1)		//value为ch的key==1时
+		{
+			return i;
+		}
+	}
+	return -1;
+
+}
