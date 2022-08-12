@@ -42,12 +42,25 @@ void test04()
 	cout << sln.firstUniqChar(s) << endl;
 }
 
+void test05()
+{
+	Solution sln;
+	string s = "anagram";
+	string t = "nagaram";
+	bool res = sln.isAnagram(s, t);
+	if (res == true)
+		cout << "true" << endl;
+	else
+		cout << "false" << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	test05();
 	system("pause");
 	return 0;
 }

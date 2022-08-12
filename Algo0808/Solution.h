@@ -15,5 +15,6 @@ public:
 	void reverseString(vector<char>& s);
 	int reverse(int x);
 	int firstUniqChar(string s);
+	bool isAnagram(string s, string t);
 };
 
