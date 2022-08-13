@@ -16,5 +16,6 @@ public:
 	int reverse(int x);
 	int firstUniqChar(string s);
 	bool isAnagram(string s, string t);
+	bool isPalindrome(string s);
 };
 

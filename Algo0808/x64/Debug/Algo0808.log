@@ -1,5 +1,4 @@
 ﻿  Solution.cpp
 D:\c++_project\AlgorithmLerning\Algo0808\Solution.cpp(39,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  main.cpp
-  正在生成代码...
+D:\c++_project\AlgorithmLerning\Algo0808\Solution.cpp(138,30): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Algo0808.vcxproj -> D:\c++_project\AlgorithmLerning\Algo0808\x64\Debug\Algo0808.exe

@@ -54,13 +54,25 @@ void test05()
 		cout << "false" << endl;
 }
 
+void test06()
+{
+	Solution sln;
+	string s = "A man, a plan, a canal: Panama";
+	bool res = sln.isPalindrome(s);
+	if (res == true)
+		cout << "true" << endl;
+	else
+		cout << "false" << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
 	//test04();
-	test05();
+	//test05();
+	test06();
 	system("pause");
 	return 0;
 }
