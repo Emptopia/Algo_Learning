@@ -3,7 +3,7 @@ using namespace std;
 #include<vector>
 #include<algorithm>
 #include"Solution.h"
-
+#include"Automaton.h"
 void test01()
 {
 	Solution sln;
@@ -65,6 +65,13 @@ void test06()
 		cout << "false" << endl;
 }
 
+void test07()
+{
+	Solution sln;
+	string s = "4193 with words";
+	cout << sln.myAtoi(s) << endl;
+}
+
 int main()
 {
 	//test01();
@@ -72,7 +79,8 @@ int main()
 	//test03();
 	//test04();
 	//test05();
-	test06();
+	//test06();
+	test07();
 	system("pause");
 	return 0;
 }

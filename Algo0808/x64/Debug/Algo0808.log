@@ -1,4 +1,8 @@
-﻿  Solution.cpp
+﻿  Automaton.cpp
+  main.cpp
+  Solution.cpp
 D:\c++_project\AlgorithmLerning\Algo0808\Solution.cpp(39,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\c++_project\AlgorithmLerning\Algo0808\Solution.cpp(138,30): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo0808\Solution.cpp(154,24): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
+  正在生成代码...
   Algo0808.vcxproj -> D:\c++_project\AlgorithmLerning\Algo0808\x64\Debug\Algo0808.exe

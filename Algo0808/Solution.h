@@ -4,6 +4,8 @@ using namespace std;
 #include<vector>
 #include<algorithm>
 #include<unordered_map>
+#include "Automaton.h"
+
 class Solution
 {
 public:
@@ -17,5 +19,8 @@ public:
 	int firstUniqChar(string s);
 	bool isAnagram(string s, string t);
 	bool isPalindrome(string s);
+	int myAtoi(string s);
+
+
 };
 

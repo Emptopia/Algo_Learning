@@ -127,9 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Automaton.h" />
     <ClInclude Include="Solution.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Automaton.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Solution.cpp" />
   </ItemGroup>

@@ -145,3 +145,12 @@ bool Solution::isPalindrome(string s)
 	}
 	return true;
 }
+
+int Solution::myAtoi(string str)
+{
+	Automaton automaton;
+	for (char c : str)
+		automaton.get(c);
+	return automaton.sign * automaton.ans;
+
+}
