@@ -11,6 +11,6 @@ public:
 
 	int strStr(string haystack, string needle);
 	string countAndSay(int n);
-
+	string longestCommonPrefix(vector<string>& strs);
 };
 

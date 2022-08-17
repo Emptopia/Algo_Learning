@@ -24,11 +24,18 @@ void test02()
 
 }
 
+void test03()
+{
+	Solution sln;
+	vector<string>strs = { "flower", "flow", "flight" };
+	cout << sln.longestCommonPrefix(strs) << endl;
+}
+
 int main()
 {
 	//test01();
-	test02();
-
+	//test02();
+	test03();
 	return 0;
 	system("pause");
 }
