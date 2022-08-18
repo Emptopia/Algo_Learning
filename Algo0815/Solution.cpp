@@ -8,7 +8,15 @@ void Solution::printUmap(unordered_map<int, int>m)
 	}
 }
 
-
+void Solution::printLinkList(ListNode* numberList)
+{
+	ListNode* ptr = numberList;
+	while (ptr != nullptr)
+	{
+		cout << ptr->val << " "; // Process node
+		ptr = ptr->next; // Move to next node
+	}
+}
 
 
 
@@ -81,4 +89,10 @@ string Solution::longestCommonPrefix(vector<string>& strs)
 			break;
 	}
 	return res;
+}
+
+void Solution::deleteNode(ListNode* node)
+{
+	node->val = node->next->val;
+	node->next = node->next->next;
 }

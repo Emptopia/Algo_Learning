@@ -7,10 +7,20 @@ using namespace std;
 class Solution
 {
 public:
+
+	struct ListNode
+	{
+		int val;
+		ListNode* next;
+		ListNode(int x) : val(x), next(NULL) {}
+	};
+
 	void printUmap(unordered_map<int, int>m);
+	void printLinkList(ListNode* numberList);
 
 	int strStr(string haystack, string needle);
 	string countAndSay(int n);
 	string longestCommonPrefix(vector<string>& strs);
+	void deleteNode(ListNode* node);
 };
 
