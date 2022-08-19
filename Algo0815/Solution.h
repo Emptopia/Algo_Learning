@@ -12,8 +12,12 @@ public:
 	{
 		int val;
 		ListNode* next;
-		ListNode(int x) : val(x), next(NULL) {}
+		ListNode() : val(0), next(nullptr) {}
+		ListNode(int x) : val(x), next(nullptr) {}
+		ListNode(int x, ListNode* next) : val(x), next(next) {}
 	};
+	int getLength(ListNode* head);
+
 
 	void printUmap(unordered_map<int, int>m);
 	void printLinkList(ListNode* numberList);
@@ -22,5 +26,7 @@ public:
 	string countAndSay(int n);
 	string longestCommonPrefix(vector<string>& strs);
 	void deleteNode(ListNode* node);
+	ListNode* removeNthFromEnd(ListNode* head, int n);
+
 };
 

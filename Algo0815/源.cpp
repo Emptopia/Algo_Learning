@@ -51,12 +51,31 @@ void test04()
 
 }
 
+void test05()
+{
+	Solution sln;
+	Solution::ListNode* FivePtr = new Solution::ListNode(5);
+	Solution::ListNode* FourPtr = new Solution::ListNode(4, FivePtr);
+	Solution::ListNode* ThreePtr = new Solution::ListNode(3, FourPtr);
+	Solution::ListNode* TwoPtr = new Solution::ListNode(2, ThreePtr);
+	Solution::ListNode* OnePtr = new Solution::ListNode(1, TwoPtr);
+
+	//Solution::ListNode* OnePtr = new Solution::ListNode(1);
+
+	//Solution::ListNode* TwoPtr = new Solution::ListNode(2);
+	//Solution::ListNode* OnePtr = new Solution::ListNode(1, TwoPtr);
+
+	sln.printLinkList(sln.removeNthFromEnd(OnePtr, 3));
+
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	test05();
 	return 0;
 	system("pause");
 }
