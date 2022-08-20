@@ -117,4 +117,16 @@ Solution::ListNode* Solution::removeNthFromEnd(ListNode* head, int n)
 	return ans;
 }
 
-
+Solution::ListNode* Solution::reverseList(ListNode* head)
+{
+	ListNode* cur = nullptr;
+	ListNode* pre = head;
+	while (pre != nullptr)
+	{
+		ListNode* t = pre->next;
+		pre->next = cur;
+		cur = pre;
+		pre = t;
+	}
+	return cur;
+}

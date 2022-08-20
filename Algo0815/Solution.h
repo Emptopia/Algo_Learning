@@ -4,6 +4,8 @@ using namespace std;
 #include<unordered_map>
 #include<map>
 #include<string>
+#include<stack>
+
 class Solution
 {
 public:
@@ -16,6 +18,7 @@ public:
 		ListNode(int x) : val(x), next(nullptr) {}
 		ListNode(int x, ListNode* next) : val(x), next(next) {}
 	};
+
 	int getLength(ListNode* head);
 
 
@@ -27,6 +30,6 @@ public:
 	string longestCommonPrefix(vector<string>& strs);
 	void deleteNode(ListNode* node);
 	ListNode* removeNthFromEnd(ListNode* head, int n);
-
+	ListNode* reverseList(ListNode* head);
 };
 
