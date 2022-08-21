@@ -82,6 +82,23 @@ void test06()
 
 }
 
+void test07()
+{
+	Solution sln;
+	Solution::ListNode* ThirdPtr = new Solution::ListNode(4);
+	Solution::ListNode* SecondPtr = new Solution::ListNode(2,ThirdPtr);
+	Solution::ListNode* FirstPtr = new Solution::ListNode(1, SecondPtr);
+
+	Solution::ListNode* ThirdPtr2 = new Solution::ListNode(4);
+	Solution::ListNode* SecondPtr2 = new Solution::ListNode(3, ThirdPtr2);
+	Solution::ListNode* FirstPtr2 = new Solution::ListNode(1, SecondPtr2);
+
+	Solution::ListNode* res = sln.mergeTwoLists(FirstPtr, FirstPtr2);
+	sln.printLinkList(res);
+
+
+}
+
 int main()
 {
 	//test01();
@@ -89,7 +106,8 @@ int main()
 	//test03();
 	//test04();
 	//test05();
-	test06();
+	//test06();
+	test07();
 	return 0;
 	system("pause");
 }

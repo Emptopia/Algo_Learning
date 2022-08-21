@@ -31,5 +31,6 @@ public:
 	void deleteNode(ListNode* node);
 	ListNode* removeNthFromEnd(ListNode* head, int n);
 	ListNode* reverseList(ListNode* head);
+	ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
 };
 
