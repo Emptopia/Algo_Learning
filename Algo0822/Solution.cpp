@@ -45,3 +45,31 @@ bool Solution::isPalindrome(ListNode* head)			//消耗过大，不建议用
 	}
 	return true;
 }
+
+bool hasCycle(ListNode* head)
+{
+	if (head == nullptr)
+		return false;
+
+	ListNode* dummy = new ListNode(-1,head);
+	ListNode* left = dummy;
+	ListNode* right = head;
+	while (right != nullptr)
+	{
+		if (right->next == right)
+			return true;
+		while (left != right)
+		{
+			if (right->next == left)
+			{
+				return true;
+			}
+			left = left->next;
+		}
+		left = dummy;
+		right = right->next;
+	}
+
+	return false;
+
+}

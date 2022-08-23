@@ -19,6 +19,6 @@ public:
 	void printLinkList(ListNode* list);
 	ListNode* LinkList(vector<int> n);
 	bool isPalindrome(ListNode* head);
-
+	bool hasCycle(ListNode* head);
 };
 

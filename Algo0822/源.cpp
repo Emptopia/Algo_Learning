@@ -22,9 +22,23 @@ void test01()
 		cout << "false" << endl;
 }
 
+void test02()
+{
+	Solution sln;
+
+	ListNode* th4 = new ListNode(-4);
+	ListNode* rd3 = new ListNode(0, th4);
+	ListNode* nd2 = new ListNode(2, rd3);
+	ListNode* st1 = new ListNode(3, nd2);
+	th4->next = nd2;
+	sln.hasCycle(st1);
+
+}
+
 int main()
 {
-	test01();
+	//test01();
+	test02();
 	system("pause");
 	return 0;
 }
