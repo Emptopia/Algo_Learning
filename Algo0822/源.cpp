@@ -35,10 +35,23 @@ void test02()
 
 }
 
+void test03()
+{
+	Solution sln;
+	TreeNode* th4 = new TreeNode(15);
+	TreeNode* th5 = new TreeNode(7);
+	TreeNode* rd3 = new TreeNode(20,th4,th5);
+	TreeNode* nd2 = new TreeNode(9);
+	TreeNode* st1 = new TreeNode(3, nd2, rd3);
+	int res = sln.maxDepth(st1);
+	cout << res << endl;
+}
+
 int main()
 {
 	//test01();
-	test02();
+	//test02();
+	test03();
 	system("pause");
 	return 0;
 }

@@ -46,7 +46,7 @@ bool Solution::isPalindrome(ListNode* head)			//消耗过大，不建议用
 	return true;
 }
 
-bool hasCycle(ListNode* head)
+bool Solution::hasCycle(ListNode* head)
 {
 	if (head == nullptr)
 		return false;
@@ -72,4 +72,36 @@ bool hasCycle(ListNode* head)
 
 	return false;
 
+}
+
+//int Solution::maxDepth(TreeNode* root)
+//{
+//	if (root == nullptr) 
+//		return 0;
+//	return max(maxDepth(root->left), maxDepth(root->right)) + 1;
+//}
+
+int Solution::maxDepth(TreeNode* root)
+{
+	if (root == nullptr)
+		return 0;
+	queue<TreeNode*>Q;
+	Q.push(root);
+	int ans = 0;
+	while (!Q.empty())
+	{
+		int sz = Q.size();
+		while (sz > 0)
+		{
+			TreeNode* node = Q.front();
+			Q.pop();
+			if (node->left)
+				Q.push(node->left);
+			if (node->right)
+				Q.push(node->right);
+			sz -= 1;
+		}
+		ans += 1;
+	}
+	return ans;
 }
