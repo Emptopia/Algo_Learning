@@ -25,11 +25,16 @@ struct TreeNode {
 
 class Solution
 {
+private:
+	vector<int> vec;
+	void traversal(TreeNode* root);
 public:
 	void printLinkList(ListNode* list);
 	ListNode* LinkList(vector<int> n);
 	bool isPalindrome(ListNode* head);
 	bool hasCycle(ListNode* head);
 	int maxDepth(TreeNode* root);
+	bool isValidBST(TreeNode* root);
 };
+
 

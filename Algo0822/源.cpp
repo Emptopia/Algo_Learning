@@ -47,11 +47,27 @@ void test03()
 	cout << res << endl;
 }
 
+void test04()
+{
+	Solution sln;
+	TreeNode* th4 = new TreeNode(4);
+	TreeNode* th5 = new TreeNode(6);
+	TreeNode* nd2 = new TreeNode(1);
+	TreeNode* rd3 = new TreeNode(5, th4, th5);
+	TreeNode* root = new TreeNode(3, nd2, rd3);
+	bool res = sln.isValidBST(root);
+	if (res == true)
+		cout << "true" << endl;
+	else
+		cout << "false" << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
-	test03();
+	//test03();
+	test04();
 	system("pause");
 	return 0;
 }
