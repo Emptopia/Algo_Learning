@@ -28,6 +28,8 @@ class Solution
 private:
 	vector<int> vec;
 	void traversal(TreeNode* root);
+	bool check(TreeNode* u, TreeNode* v);
+
 public:
 	void printLinkList(ListNode* list);
 	ListNode* LinkList(vector<int> n);
@@ -35,6 +37,7 @@ public:
 	bool hasCycle(ListNode* head);
 	int maxDepth(TreeNode* root);
 	bool isValidBST(TreeNode* root);
+	bool isSymmetric(TreeNode* root);
 };
 
 

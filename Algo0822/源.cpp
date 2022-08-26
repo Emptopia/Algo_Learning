@@ -62,12 +62,31 @@ void test04()
 		cout << "false" << endl;
 }
 
+void test05()
+{
+	Solution sln;
+	TreeNode* th6 = new TreeNode(4);
+	TreeNode* th7 = new TreeNode(3);
+	TreeNode* th4 = new TreeNode(3);
+	TreeNode* th5 = new TreeNode(4);
+	TreeNode* nd2 = new TreeNode(2, th6, th7);
+	TreeNode* rd3 = new TreeNode(2, th4, th5);
+	TreeNode* root = new TreeNode(1, nd2, rd3);
+	bool res = sln.isSymmetric(root);
+	if (res == true)
+		cout << "true" << endl;
+	else
+		cout << "false" << endl;
+
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	test05();
 	system("pause");
 	return 0;
 }
