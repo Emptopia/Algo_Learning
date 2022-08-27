@@ -38,6 +38,8 @@ public:
 	int maxDepth(TreeNode* root);
 	bool isValidBST(TreeNode* root);
 	bool isSymmetric(TreeNode* root);
+	vector<vector<int>> levelOrder(TreeNode* root);
+	void printVector(vector<vector<int>>);
 };
 
 

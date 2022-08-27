@@ -80,13 +80,29 @@ void test05()
 
 }
 
+void test06()
+{
+	Solution sln;
+	TreeNode* th6 = new TreeNode(4);
+	TreeNode* th7 = new TreeNode(3);
+	TreeNode* th4 = new TreeNode(3);
+	TreeNode* th5 = new TreeNode(4);
+	TreeNode* nd2 = new TreeNode(2, th6, th7);
+	TreeNode* rd3 = new TreeNode(2, th4, th5);
+	TreeNode* root = new TreeNode(1, nd2, rd3);
+	vector<vector<int>> res = sln.levelOrder(root);
+	sln.printVector(res);
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
 	//test04();
-	test05();
+	//test05();
+	test06();
+
 	system("pause");
 	return 0;
 }

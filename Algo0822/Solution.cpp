@@ -148,3 +148,39 @@ bool Solution::isSymmetric(TreeNode* root) {
 	return check(root, root);
 }
 
+
+vector<vector<int>> Solution::levelOrder(TreeNode* root)
+{
+	vector <vector <int>> ret;
+	if (!root) {
+		return ret;
+	}
+
+	queue <TreeNode*> q;
+	q.push(root);
+	while (!q.empty()) {
+		int currentLevelSize = q.size();
+		ret.push_back(vector <int>());
+		for (int i = 1; i <= currentLevelSize; ++i) {
+			auto node = q.front(); q.pop();
+			ret.back().push_back(node->val);
+			if (node->left) q.push(node->left);
+			if (node->right) q.push(node->right);
+		}
+	}
+
+	return ret;
+
+}
+
+void Solution::printVector(vector<vector<int>>v)
+{
+	for (vector<vector<int>>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		for (vector<int>::iterator iit = it->begin(); iit != it->end(); iit++)
+		{
+			cout << *iit;
+		}
+		cout << endl;
+	}
+}
