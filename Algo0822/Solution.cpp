@@ -1,5 +1,17 @@
 #include "Solution.h"
 
+void Solution::printVector(vector<vector<int>>v)
+{
+	for (vector<vector<int>>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		for (vector<int>::iterator iit = it->begin(); iit != it->end(); iit++)
+		{
+			cout << *iit << " ";
+		}
+		cout << endl;
+	}
+}
+
 void Solution::printLinkList(ListNode* list)
 {
 	ListNode* ptr = list;
@@ -10,6 +22,8 @@ void Solution::printLinkList(ListNode* list)
 	}
 	cout << endl;
 }
+
+
 
 ListNode* Solution::LinkList(vector<int> n)
 {
@@ -151,21 +165,26 @@ bool Solution::isSymmetric(TreeNode* root) {
 
 vector<vector<int>> Solution::levelOrder(TreeNode* root)
 {
-	vector <vector <int>> ret;
-	if (!root) {
+	vector <vector <int>> ret;				//二维空数组
+	if (!root) 
+	{
 		return ret;
 	}
-
 	queue <TreeNode*> q;
 	q.push(root);
-	while (!q.empty()) {
+	while (!q.empty()) 
+	{
 		int currentLevelSize = q.size();
-		ret.push_back(vector <int>());
-		for (int i = 1; i <= currentLevelSize; ++i) {
-			auto node = q.front(); q.pop();
-			ret.back().push_back(node->val);
-			if (node->left) q.push(node->left);
-			if (node->right) q.push(node->right);
+		ret.push_back(vector <int>());			//每次循环先插入一个空数组
+		for (int i = 1; i <= currentLevelSize; ++i) 
+		{
+			auto node = q.front(); 
+			q.pop();
+			ret.back().push_back(node->val);		//在最后一个数组里插入值
+			if (node->left) 
+				q.push(node->left);
+			if (node->right) 
+				q.push(node->right);
 		}
 	}
 
@@ -173,14 +192,18 @@ vector<vector<int>> Solution::levelOrder(TreeNode* root)
 
 }
 
-void Solution::printVector(vector<vector<int>>v)
+TreeNode* Solution::sortedArrayToBST(vector<int>& nums)
 {
-	for (vector<vector<int>>::iterator it = v.begin(); it != v.end(); it++)
-	{
-		for (vector<int>::iterator iit = it->begin(); iit != it->end(); iit++)
-		{
-			cout << *iit;
-		}
-		cout << endl;
-	}
+	return helper(nums, 0, nums.size() - 1);
+}
+
+TreeNode* Solution::helper(vector<int>&nums, int left, int right)
+{
+	if (left > right)
+		return nullptr;
+	int mid = (left + right) / 2;		// 总是选择中间位置左边的数字作为根节点
+	TreeNode* root = new TreeNode(nums[mid]);
+	root->left = helper(nums, left, mid - 1);
+	root->right = helper(nums, mid + 1, right);
+	return root;
 }

@@ -31,7 +31,9 @@ private:
 	bool check(TreeNode* u, TreeNode* v);
 
 public:
+	void printVector(vector<vector<int>>);
 	void printLinkList(ListNode* list);
+
 	ListNode* LinkList(vector<int> n);
 	bool isPalindrome(ListNode* head);
 	bool hasCycle(ListNode* head);
@@ -39,7 +41,9 @@ public:
 	bool isValidBST(TreeNode* root);
 	bool isSymmetric(TreeNode* root);
 	vector<vector<int>> levelOrder(TreeNode* root);
-	void printVector(vector<vector<int>>);
+	TreeNode* sortedArrayToBST(vector<int>& nums);
+	TreeNode* helper(vector<int>& nums, int left, int right);
+
 };
 
 

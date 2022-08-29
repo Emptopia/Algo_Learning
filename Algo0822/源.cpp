@@ -94,6 +94,17 @@ void test06()
 	sln.printVector(res);
 }
 
+void test07()
+{
+	Solution sln;
+	vector<int>nums = { -10, -3, 0, 5, 9 };
+
+	TreeNode* root = sln.sortedArrayToBST(nums);
+
+	vector<vector<int>> res = sln.levelOrder(root);			//±È¿˙∫Û¥Ú”°
+	sln.printVector(res);
+}
+
 int main()
 {
 	//test01();
@@ -101,8 +112,8 @@ int main()
 	//test03();
 	//test04();
 	//test05();
-	test06();
-
+	//test06();
+	test07();
 	system("pause");
 	return 0;
 }
