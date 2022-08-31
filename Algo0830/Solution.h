@@ -9,5 +9,7 @@ public:
 	void printVector(vector<int>nums);
 
 	void merge(vector<int>& nums1, int m, vector<int>& nums2, int n);
+	int firstBadVersion(int n);
+	bool isBadVersion(int bad);
 };
 

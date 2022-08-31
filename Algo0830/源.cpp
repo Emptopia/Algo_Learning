@@ -14,10 +14,18 @@ void test01()
 	sln.printVector(nums1);
 }
 
+void test02()
+{
+	Solution sln;
+	int n = 5;
+	int res = sln.firstBadVersion(n);
+	cout << res << endl;
+}
+
 int main()
 {
-	test01();
-
+	//test01();
+	test02();
 	system("pause");
 	return 0;
 }
