@@ -11,5 +11,6 @@ public:
 	void merge(vector<int>& nums1, int m, vector<int>& nums2, int n);
 	int firstBadVersion(int n);
 	bool isBadVersion(int bad);
+	int climbStairs(int n);
 };
 

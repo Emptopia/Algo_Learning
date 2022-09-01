@@ -22,6 +22,12 @@ void test02()
 	cout << res << endl;
 }
 
+void test03()
+{
+	Solution sln;
+	sln.climbStairs(3);
+}
+
 int main()
 {
 	//test01();
