@@ -28,10 +28,20 @@ void test03()
 	sln.climbStairs(3);
 }
 
+void test04()
+{
+	Solution sln;
+	vector<int>nums = { 7,1,5,3,6,4 };
+	int profit = sln.maxProfit(nums);
+	cout << profit << endl;
+}
+
 int main()
 {
 	//test01();
-	test02();
+	//test02();
+	//test03();
+	test04();
 	system("pause");
 	return 0;
 }

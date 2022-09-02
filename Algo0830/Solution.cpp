@@ -98,3 +98,17 @@ int Solution::climbStairs(int n)
 	return dp[n];
 
 }
+
+int Solution::maxProfit(vector<int>& prices)
+{
+	int profit = 0;
+	int min = prices[0];
+	for (int i = 0; i < prices.size(); i++)
+	{
+		if (prices[i] < min)
+			min = prices[i];
+		if (prices[i] - min > profit)
+			profit = prices[i] - min;
+	}
+	return profit;
+}

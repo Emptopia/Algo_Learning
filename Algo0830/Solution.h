@@ -12,5 +12,6 @@ public:
 	int firstBadVersion(int n);
 	bool isBadVersion(int bad);
 	int climbStairs(int n);
+	int maxProfit(vector<int>& prices);
 };
 
