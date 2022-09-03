@@ -112,3 +112,17 @@ int Solution::maxProfit(vector<int>& prices)
 	}
 	return profit;
 }
+
+int Solution::maxSubArray(vector<int>& nums)
+{
+	int pre = 0, maxAns = nums[0];
+	for (int x = 0; x < nums.size(); x++)
+	//for(const auto& x:nums)			//使用此迭代器循环时，nums[x]换为x
+	{
+		pre = max(pre + nums[x], nums[x]);			//等同于max(累加，左指针)
+																							//累加 < x 时，舍弃先前累加，累加 = x			累加 > x 时，不舍弃累加，累加=累加+x
+		maxAns = max(maxAns, pre);						//最大值 = 最大累加值
+	}
+	return maxAns;
+
+}

@@ -36,12 +36,21 @@ void test04()
 	cout << profit << endl;
 }
 
+void test05()
+{
+	Solution sln;
+	vector<int>nums = { -2,1,-3,4,-1,2,1,-5,4 };
+	int res = sln.maxSubArray(nums);
+	cout << res << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	test05();
 	system("pause");
 	return 0;
 }
