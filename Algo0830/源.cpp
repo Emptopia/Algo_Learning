@@ -44,13 +44,22 @@ void test05()
 	cout << res << endl;
 }
 
+void test06()
+{
+	Solution sln;
+	vector<int>nums = { 2,7,9,3,1 };
+	int res = sln.rob(nums);
+	cout << res << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
 	//test04();
-	test05();
+	//test05();
+	test06();
 	system("pause");
 	return 0;
 }

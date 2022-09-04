@@ -14,5 +14,6 @@ public:
 	int climbStairs(int n);
 	int maxProfit(vector<int>& prices);
 	int maxSubArray(vector<int>& nums);
+	int rob(vector<int>& nums);
 };
 

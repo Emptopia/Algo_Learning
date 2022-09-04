@@ -126,3 +126,20 @@ int Solution::maxSubArray(vector<int>& nums)
 	return maxAns;
 
 }
+
+int Solution::rob(vector<int>& nums)
+{
+	if (nums.empty())
+		return 0;
+	int size = nums.size();
+	if (size == 1)
+		return nums[0];
+	vector<int>dp = vector<int>(size, 0);		//加入size个0
+	dp[0] = nums[0];
+	dp[1] = max(nums[0], nums[1]);
+	for (int i = 2; i < size; i++)
+	{
+		dp[i] = max(dp[i - 2] + nums[i], dp[i - 1]);			//注意这里是（i-2的最高金额+i房间金额）对比（i-1的最高金额）
+	}
+	return dp[size - 1];
+}
