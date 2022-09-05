@@ -52,6 +52,13 @@ void test06()
 	cout << res << endl;
 }
 
+void test07()
+{
+	vector<int>nums = { 1, 2, 3 };
+
+
+}
+
 int main()
 {
 	//test01();
@@ -59,7 +66,8 @@ int main()
 	//test03();
 	//test04();
 	//test05();
-	test06();
+	//test06();
+	test07();
 	system("pause");
 	return 0;
 }
