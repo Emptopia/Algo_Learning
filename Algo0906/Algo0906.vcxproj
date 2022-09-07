@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MinStack.cpp" />
     <ClCompile Include="Solution.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MinStack.h" />
     <ClInclude Include="Solution.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
