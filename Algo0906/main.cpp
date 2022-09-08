@@ -31,11 +31,19 @@ void test02()
 
 }
 
+void test03()
+{
+	Solution sln;
+	vector<string>nums = sln.fizzBuzz(15);
+	
+	sln.printsVector(nums);
+}
 
 int main()
 {
 	//test01();
-	test02();
+	//test02();
+	test03();
 	system("pause");
 	return 0;
 
