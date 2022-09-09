@@ -39,11 +39,19 @@ void test03()
 	sln.printsVector(nums);
 }
 
+void test04()
+{
+	Solution sln;
+	int res = sln.countPrimes(8);
+	cout << res << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
-	test03();
+	//test03();
+	test04();
 	system("pause");
 	return 0;
 

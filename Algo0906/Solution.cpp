@@ -65,3 +65,25 @@ vector<string>  Solution::fizzBuzz(int n)
 	}
 	return res;
 }
+
+int Solution::countPrimes(int n)
+{
+	vector<int> isPrime(n, 1);			//10个1
+	int ans = 0;
+	for (int i = 2; i < n; ++i) 
+	{
+		if (isPrime[i]) 
+		{
+			ans += 1;											//没被排除掉的是质数(以及初始的2)
+			if ((long long)i * i < n)						//当存在自身倍数时
+			{
+				for (int j = i * i; j < n; j += i)			//排除掉自身的倍数  
+				{
+					isPrime[j] = 0;
+				}
+			}
+		}
+	}
+	return ans;
+
+}
