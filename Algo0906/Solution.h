@@ -23,6 +23,8 @@ public:
     vector<string> fizzBuzz(int n);
 
     int countPrimes(int n);
+
+    bool isPowerOfThree(int n);
 };
 
 

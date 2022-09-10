@@ -46,12 +46,21 @@ void test04()
 	cout << res << endl;
 }
 
+void test05()
+{
+	Solution sln;
+	int res = sln.isPowerOfThree(4);
+	cout << res << endl;
+
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	test05();
 	system("pause");
 	return 0;
 

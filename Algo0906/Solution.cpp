@@ -87,3 +87,17 @@ int Solution::countPrimes(int n)
 	return ans;
 
 }
+
+bool Solution::isPowerOfThree(int n)
+{
+	if (n == 1)
+		return true;
+	long long temp = 3;
+	while (temp <= n)
+	{
+		if (temp == n)
+			return true;
+		temp = 3 * temp;
+	}
+	return false;
+}

@@ -1,3 +1,2 @@
-﻿  Solution.cpp
-D:\c++_project\AlgorithmLerning\Algo0906\Solution.cpp(25,17): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+﻿  main.cpp
   Algo0906.vcxproj -> D:\c++_project\AlgorithmLerning\Algo0906\x64\Debug\Algo0906.exe
