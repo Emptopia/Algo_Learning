@@ -101,3 +101,19 @@ bool Solution::isPowerOfThree(int n)
 	}
 	return false;
 }
+
+int Solution::romanToInt(string s)
+{
+	int res = 0;
+	int length = s.size();
+	for (int i = 0; i < length; i++)
+	{
+		int value = symbolValues[s[i]];
+		if (i < length - 1 && value < symbolValues[s[i + 1]])
+			res -= value;
+		else
+			res += value;
+	}
+	return res;
+}
+

@@ -54,13 +54,24 @@ void test05()
 
 }
 
+void test06()
+{
+	Solution sln;
+	string s = "V";
+	int res = sln.romanToInt();
+	cout << res << endl;
+
+}
+
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
 	//test04();
-	test05();
+	//test05();
+	test06();
 	system("pause");
 	return 0;
 
