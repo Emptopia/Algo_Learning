@@ -10,13 +10,22 @@ void test01()
 	cout << res << endl;
 }
 
+void test02()
+{
+	Solution sln;
+	int x = 1;
+	int y = 4;
+	int res = sln.hammingDistance(x, y);
+	cout << res << endl;
 
+}
 
 
 
 int main()
 {
-	test01();
+	//test01();
+	test02();
 	system("pause");
 	return 0;
 }
