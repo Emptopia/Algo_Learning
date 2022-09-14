@@ -39,3 +39,23 @@ int  Solution::hammingDistance(int x, int y)
 
 
 }
+
+uint32_t Solution::reverseBits(uint32_t n)
+{
+	//return Integer.reverse(n);				未知的库
+
+	//		(n & 1) 返回n的最末位，<< (31 - i) 左移 31 - i 位，即可逆序返回到res对应的高位，
+	//		和之前结果进行一次或运算 |=，整合了每一位的结果
+	uint32_t res = 0;
+	for (int i = 0; i < 32; i++)
+	{
+		res |= (n & 1) << (31 - i);
+		n >>= 1;
+
+		//易于理解
+		//res = res << 1;				//res左移
+		//res = res | (n & 1);		//res取n末位
+		//n = n >> 1;					//n右移
+	}
+	return res;
+}

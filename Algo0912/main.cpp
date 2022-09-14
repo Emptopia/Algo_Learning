@@ -20,12 +20,20 @@ void test02()
 
 }
 
+void test03()
+{
+	Solution sln;
+	uint32_t num = 43261596;
+	uint32_t res = sln.reverseBits(num);
+	cout << res << endl;
 
+}
 
 int main()
 {
 	//test01();
-	test02();
+	//test02();
+	test03();
 	system("pause");
 	return 0;
 }
