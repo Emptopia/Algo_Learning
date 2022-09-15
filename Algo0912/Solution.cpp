@@ -2,6 +2,18 @@
 #define __builtin_popcount __popcnt 
 #define __builtin_popcountl __popcnt
 
+void Solution::printVV(vector<vector<int>>v)
+{
+	for (vector<vector<int>>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		for (vector<int>::iterator itt = it->begin(); itt != it->end(); itt++)
+		{
+			cout << *itt << " ";
+		}
+		cout << endl;
+	}
+}
+
 int Solution::hammingWeight(uint32_t n)
 {
 	//n & (n−1)，其运算结果恰为把 nn 的二进制位中的最低位的 11 变为 00 之后的结果。
@@ -56,6 +68,24 @@ uint32_t Solution::reverseBits(uint32_t n)
 		//res = res << 1;				//res左移
 		//res = res | (n & 1);		//res取n末位
 		//n = n >> 1;					//n右移
+	}
+	return res;
+}
+
+vector<vector<int>> Solution::generate(int numRows)
+{
+	vector<vector<int>>res(numRows);
+	res[0] = { 1 };
+	for (int i = 1; i < numRows; i++)
+	{
+		res[i] = vector<int>(i+1);
+		res[i][0] = 1;
+		res[i][i] = 1;
+		for (int a = 1, b = i-1; a <= b; a++, b--)
+		{
+			res[i][a] = res[i - 1][a - 1] + res[i - 1][a];
+			res[i][b] = res[i][a];
+		}
 	}
 	return res;
 }

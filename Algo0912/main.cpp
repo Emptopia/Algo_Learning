@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 #include "Solution.h"
-
+#include <vector>
 void test01()
 {
 	Solution sln;
@@ -29,11 +29,20 @@ void test03()
 
 }
 
+void test04()
+{
+	Solution sln;
+	int num = 5;
+	vector<vector<int>>res = sln.generate(num);
+	sln.printVV(res);
+}
+
 int main()
 {
 	//test01();
 	//test02();
-	test03();
+	//test03();
+	test04();
 	system("pause");
 	return 0;
 }
