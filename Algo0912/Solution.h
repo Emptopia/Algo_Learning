@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 #include<vector>
-
+#include<stack>
 
 class Solution
 {
@@ -16,5 +16,7 @@ public:
 	uint32_t reverseBits(uint32_t n);
 
 	vector<vector<int>> generate(int numRows);
+
+	bool isValid(string s);
 };
 

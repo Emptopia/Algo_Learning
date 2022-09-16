@@ -89,3 +89,46 @@ vector<vector<int>> Solution::generate(int numRows)
 	}
 	return res;
 }
+
+bool Solution::isValid(string s)
+{
+	//()[]{}
+	stack<char>temp;
+	for (int i = 0; i < s.size(); i++)
+	{
+		if (s[i] == '(' or s[i] == '[' or s[i] == '{')
+		{
+			temp.push(s[i]);
+		}
+		else
+		{
+			if (temp.empty())
+				return false;
+			if (s[i] == ')')
+			{
+				if (temp.top() == '(')
+					temp.pop();
+				else
+					return false;
+			}
+			else if (s[i] == ']')
+			{
+				if (temp.top() == '[')
+					temp.pop();
+				else
+					return false;
+			}
+			else
+			{
+				if (temp.top() == '{')
+					temp.pop();
+				else
+					return false;
+			}
+		}
+	}
+	if (temp.empty())
+		return true;
+	else
+		return false;
+}
