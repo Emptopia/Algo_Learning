@@ -3,6 +3,7 @@
 using namespace std;
 #include<vector>
 #include<stack>
+#include<algorithm>
 
 class Solution
 {
@@ -18,5 +19,7 @@ public:
 	vector<vector<int>> generate(int numRows);
 
 	bool isValid(string s);
+
+	int missingNumber(vector<int>& nums);
 };
 
