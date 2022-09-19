@@ -77,3 +77,21 @@ vector<vector<int>> Solution::merge(vector<vector<int>>& intervals)
 	}
 	return res;
 }
+
+void Solution::rotate(vector<vector<int>>& matrix)
+{
+	int len = matrix.size();
+	int temp;
+	for (int j = 0; j < len - 1; j++)
+	{
+		for (int i = 0; i < len - 1- 2*j ; i++)
+		{
+			temp = matrix[j][j + i];
+			matrix[j][j + i] = matrix[len - 1 - i - j][j];
+			matrix[len - 1 - i - j][j] = matrix[len - 1 - j][len - 1 - i - j];
+			matrix[len - 1 - j][len - 1 - i - j] = matrix[i + j][len - 1 - j];
+			matrix[i + j][len - 1 - j] = temp;
+		}
+	}
+
+}

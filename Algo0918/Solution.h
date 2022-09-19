@@ -12,5 +12,6 @@ public:
 	int searchInsert(vector<int>& nums, int target);
 	vector<vector<int>> merge(vector<vector<int>>& intervals);
 	bool isMerge(vector<int>v1, vector<int>v2);
+	void rotate(vector<vector<int>>& matrix);
 };
 
