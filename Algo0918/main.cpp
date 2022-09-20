@@ -51,12 +51,37 @@ void test04()
 	sln.VVprint(matrix);
 }
 
+void test05()
+{
+	Solution sln;
+	vector<vector<int>>matrix =
+	{
+		{ 0,1,2,0 },
+		{ 3,4,5,2 },
+		{ 1,3,1,5 }
+	};
+	sln.setZeroes(matrix);
+	sln.VVprint(matrix);
+}
+
+void test06()
+{
+	Solution sln;
+	//vector<vector<int>>mat = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+	vector<vector<int>>mat = { {2,3} };
+	vector<int>res = sln.findDiagonalOrder(mat);
+	sln.Vprint(res);
+}
+
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	//test05();
+	test06();
 	system("pause");
 	return 0;
 }

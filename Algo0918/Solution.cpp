@@ -1,4 +1,12 @@
 #include "Solution.h"
+void Solution::Vprint(vector<int>v)
+{
+	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
 
 void Solution::VVprint(vector<vector<int>>v)
 {
@@ -94,4 +102,80 @@ void Solution::rotate(vector<vector<int>>& matrix)
 		}
 	}
 
+}
+
+void Solution::setZeroes(vector<vector<int>>& matrix)
+{
+	vector<int>row;
+	vector<int>column;
+	int rsize = matrix.size();
+	int csize = matrix[0].size();
+	for (int i = 0; i < rsize; i++)
+	{
+		for (int j = 0; j < csize; j++)
+		{
+			if (matrix[i][j] == 0)
+			{
+				row.push_back(i);
+				column.push_back(j);			//用两个数组记录需要清除的行列
+			}
+		}
+	}
+	for (int i = 0; i < row.size(); i++)		//清零行
+	{
+		for (int j = 0; j < csize; j++)
+			matrix[row[i]][j] = 0;
+	}
+	for (int i = 0; i < column.size(); i++)		//清零列
+	{
+		for (int j = 0; j < rsize; j++)
+			matrix[j][column[i]] = 0;
+	}
+	return;
+}
+
+vector<int> Solution::findDiagonalOrder(vector<vector<int>>& mat)
+{
+	vector<int>res;
+	res.push_back(mat[0][0]);
+	int m = mat.size();
+	int n = mat[0].size();
+	int row = 0;
+	int column = 0;
+	while (true)
+	{
+		//判断是否遍历到最后一位
+		if (row == m - 1 && column == n - 1)		
+			break;
+		//往右上遍历
+		while (row !=0 && column!=n-1)            //右上能走，循环右上
+		{
+			row--;
+			column++;
+			res.push_back(mat[row][column]);
+		}
+		if (row == 0 && column != n - 1)            //到第一行，非最后一列：列下标+1
+			column++;
+		else                                                           //其他情况：行下标+1
+			row++;
+		res.push_back(mat[row][column]);
+
+		//判断是否遍历到最后一位
+		if (row == m - 1 && column == n - 1)
+			break;
+		//往左下遍历
+		while (row != m - 1 && column != 0)       //左下能走，循环左下
+		{
+			row++;
+			column--;
+			res.push_back(mat[row][column]);  
+		}
+		if (row != m - 1 && column ==0)          //到第一列，非最后一行：行下标+1
+			row++;
+		else                                                         //其他情况：列下标+1
+			column++;
+		res.push_back(mat[row][column]);        
+
+	}
+	return res;
 }
