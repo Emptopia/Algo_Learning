@@ -73,6 +73,30 @@ void test06()
 	sln.Vprint(res);
 }
 
+void test07()
+{
+	Solution sln;
+	vector<string>strs = { "flower","flow","flight" };
+	string res = sln.longestCommonPrefix(strs);
+	cout << res << endl;
+}
+
+void test08()
+{
+	Solution sln;
+	string s = "babad";
+	string res = sln.longestPalindrome(s);
+	cout << res << endl;
+}
+
+void test09()
+{
+	Solution sln;
+	string s = " the sky is     blue ";
+	string res = sln.reverseWords(s);
+	cout << res << endl;
+
+}
 
 int main()
 {
@@ -81,7 +105,11 @@ int main()
 	//test03();
 	//test04();
 	//test05();
-	test06();
+	//test06();
+	//test07();
+	//test08();
+	test09();
+
 	system("pause");
 	return 0;
 }

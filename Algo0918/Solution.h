@@ -16,5 +16,8 @@ public:
 	void rotate(vector<vector<int>>& matrix);
 	void setZeroes(vector<vector<int>>& matrix);
 	vector<int> findDiagonalOrder(vector<vector<int>>& mat);
+	string longestCommonPrefix(vector<string>& strs);
+	string longestPalindrome(string s);
+	string reverseWords(string s);
 };
 

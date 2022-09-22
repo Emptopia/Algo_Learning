@@ -179,3 +179,103 @@ vector<int> Solution::findDiagonalOrder(vector<vector<int>>& mat)
 	}
 	return res;
 }
+
+string Solution::longestCommonPrefix(vector<string>& strs)
+{
+	string res = strs[0];							
+	for (int i = 1; i < strs.size(); i++)
+	{
+		for (int j = 0; j < strs[i].size() && j < res.size(); j++)
+		{
+			if (strs[i][j] != res[j])					//遍历到不同字母时，resize前一个下标的长度
+			{
+				res.resize(j);
+			}
+		}
+		if (res.size() > strs[i].size())			//补充下一个字符串比公共前缀还短的情况
+			res = strs[i];
+	}
+	return res;
+
+	//还有个方法：第一遍直接遍历所有成员的首字母，相同则push_back到res，依此类推。
+}
+
+string Solution::longestPalindrome(string s)
+{
+	//动态规划：记住求过的解来节省时间
+	int n = s.size();
+	if (n < 2) {
+		return s;
+	}
+
+	int maxLen = 1;
+	int begin = 0;
+	// dp[i][j] 表示 s[i]到s[j] 是否是回文串			
+	vector<vector<int>> dp(n, vector<int>(n));				//创建了n个	 大小为n  的vector<int>		(成员都是0)
+	// 初始化：所有长度为 1 的子串都是回文串
+	for (int i = 0; i < n; i++) {
+		dp[i][i] = true;															//此前所有成员为0，即false
+	}
+	// 递推开始
+	// 先枚举子串长度
+	for (int L = 2; L <= n; L++) {
+		// 枚举左边界，左边界的上限设置可以宽松一些
+		for (int i = 0; i < n; i++) {
+			// 由 L 和 i 可以确定右边界，即 j - i + 1 = L 得
+			int j = L + i - 1;
+			// 如果右边界越界，就可以退出当前循环
+			if (j >= n) {
+				break;
+			}
+
+			if (s[i] != s[j]) {
+				dp[i][j] = false;
+			}
+			else {												//左端等于右端时，分以下2种情况
+				if (j - i < 3) {
+					dp[i][j] = true;							//没有子串时，本串就是回文串
+				}
+				else {
+					dp[i][j] = dp[i + 1][j - 1];			//子串是回文串时，本串也是回文串，反之
+				}
+			}
+
+			// 只要 dp[i][L] == true 成立，就表示子串 s[i..L] 是回文，此时记录回文长度和起始位置
+			if (dp[i][j] && j - i + 1 > maxLen) {				//从右往左，左右端点比最大记录大，并本串是回文时，执行if语句
+				maxLen = j - i + 1;
+				begin = i;
+			}
+		}
+	}
+	return s.substr(begin, maxLen);
+}
+
+string Solution::reverseWords(string s)
+{
+	//逻辑混乱，待改进
+	string res = "";
+	int temp = 0;
+	string test;
+	for (int i = s.size() - 1; i >= 0; i--)
+	{
+		if (s[i] == ' ')
+		{
+			test = s.substr(i + 1, temp);
+			if (test != "")
+			{
+				res += test;
+				res += " ";			//第一位为空格时，此步会执行，插到res末位，故在278行删除
+			}
+			temp = 0;
+		}
+		else
+		{
+			temp++;
+		}
+	}
+	res += s.substr(0, temp);
+	if (res.back() == ' ')						
+		res.resize(res.size() - 1);			//278
+	return res;
+
+}
