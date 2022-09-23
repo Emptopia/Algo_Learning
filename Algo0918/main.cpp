@@ -98,6 +98,15 @@ void test09()
 
 }
 
+void test10()
+{
+	Solution sln;
+	string haystack = "hello";
+	string needle = "ll";
+	int res = sln.strStr(haystack, needle);
+	cout << res << endl;
+}
+
 int main()
 {
 	//test01();
@@ -108,7 +117,8 @@ int main()
 	//test06();
 	//test07();
 	//test08();
-	test09();
+	//test09();
+	test10();
 
 	system("pause");
 	return 0;

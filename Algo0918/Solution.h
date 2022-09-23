@@ -19,5 +19,6 @@ public:
 	string longestCommonPrefix(vector<string>& strs);
 	string longestPalindrome(string s);
 	string reverseWords(string s);
+	int strStr(string haystack, string needle);
 };
 

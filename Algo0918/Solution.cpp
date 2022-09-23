@@ -279,3 +279,28 @@ string Solution::reverseWords(string s)
 	return res;
 
 }
+
+int Solution::strStr(string haystack, string needle)
+{
+	int res = -1;
+	int len = needle.size();
+	for (int i = 0; i < haystack.size(); i++)
+	{
+		if (haystack[i] == needle[0])
+		{
+			res = i;
+			for (int j = 1; j < len; j++)
+			{
+				if (haystack[i + j] != needle[j])
+				{
+					res = -1;
+					break;
+				}
+			}
+			if (res != -1)
+				return res;
+		}
+	}
+	return res;
+	//还有另一种KMP算法
+}
