@@ -304,3 +304,188 @@ int Solution::strStr(string haystack, string needle)
 	return res;
 	//还有另一种KMP算法
 }
+
+int Solution::temperatureTrend(vector<int>& temperatureA, vector<int>& temperatureB)
+{
+	int res = 0;
+	int temp = 0;
+	int len = temperatureA.size();
+	for (int i = 0; i < len-1; i++)
+	{
+		if (temperatureA[i + 1] == temperatureA[i])
+		{
+			if (temperatureB[i + 1] == temperatureB[i])
+			{
+				temp++;
+			}
+			else
+			{
+				res = max(res, temp);
+				temp = 0;
+			}
+		}
+		else if (temperatureA[i + 1] > temperatureA[i])
+		{
+			if (temperatureB[i + 1] > temperatureB[i])
+			{
+				temp++;
+			}
+			else
+			{
+				res = max(res, temp);
+				temp = 0;
+			}
+		}
+		else
+		{
+			if (temperatureB[i + 1] < temperatureB[i])
+			{
+				temp++;
+			}
+			else
+			{
+				res = max(res, temp);
+				temp = 0;
+			}
+		}
+	}
+	res = max(res, temp);
+	return res;
+}
+
+void Solution::Sprint(set<int>v)
+{
+	for (set<int>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+
+int Solution::transportationHub(vector<vector<int>>& path)
+{
+	set<int>nums;
+	int res = -1;
+	for (int i = 0; i < path.size(); i++)
+	{
+		nums.insert(path[i][0]);
+		nums.insert(path[i][1]);
+	}
+	set<int>temp = nums;
+	//Sprint(nums);
+	for (int p = 0; p < nums.size(); p++)
+	{
+		temp = nums;
+		for (int i = 0; i < path.size(); i++)
+		{
+			if (path[i][1] == p)
+				temp.erase(path[i][0]);
+			if (path[i][0] == p)
+				break;
+			if (temp.size() == 1)
+				res = p;
+		}
+	}
+	return res;
+}
+
+vector<vector<int>> Solution::ballGame(int num, vector<string>& plate)
+{
+	int row = plate.size();
+	int column = plate[0].size();
+	cout << "hanglie = " << row << " lie" << column << endl;
+	vector<vector<int>>res = { };
+	int a;
+	int b;
+	int temp = 1;	//1上2下3左4右
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < column; j++)
+		{
+			if (i == 0 && j == 5)
+				cout << " ";
+			if (plate[i][j] == '.' &&(i == 0 || j == 0 || i == row-1 || j == column-1)&& !(i==0&&j==0) && !(i == row-1 && j == 0) && !(i == 0 && j == column-1) && !(i == row-1 && j == column-1))
+			{
+				cout << i << j << endl;
+				a = i;
+				b = j;
+				if (a == 0)					//记录初始方向
+					temp = 2;
+				else if (b == 0)
+					temp = 4;
+				else if (a == row-1)
+					temp = 1;
+				else
+					temp = 3;
+				for (int k = 0; k < num; k++)						//小球移动次数
+				{
+					//判断是否发生方向变换或进洞
+					if (plate[a][b] == '.')									
+					{
+
+					}						
+					else if (plate[a][b] == 'W')	//逆时针
+					{
+						if (temp == 1)
+							temp = 3;
+						else if (temp == 2)
+							temp = 4;
+						else if (temp == 3)
+							temp = 2;
+						else
+							temp = 1;
+					}
+					else if (plate[a][b] == 'E')//顺时针
+					{
+						if (temp == 1)
+							temp = 4;
+						else if (temp == 2)
+							temp = 3;
+						else if (temp == 3)
+							temp = 1;
+						else
+							temp = 2;
+					}
+					else
+					{
+						
+					}
+
+					//小球移动
+					if (temp == 1)	
+					{
+						if (a == 0)
+							break;
+						a--;
+					}
+					else if (temp == 2)
+					{
+						if (a == row-1)
+							break;
+						a++;
+					}
+					else if (temp == 3)
+					{
+						if (b == 0)
+							break;
+						b--;
+					}
+					else
+					{
+						if (b == column-1)
+							break;
+						b++;
+					}
+					if (plate[a][b] == 'O')
+					{
+						res.push_back({ i,j });
+						break;
+					}
+				}
+			}
+		}
+
+	}
+	return res;
+}

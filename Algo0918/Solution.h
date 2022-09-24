@@ -4,11 +4,14 @@ using namespace std;
 #include<vector>
 #include<numeric>
 #include<algorithm>
+#include<set>
 class Solution
 {
 public:
 	void Vprint(vector<int>v);
 	void VVprint(vector<vector<int>>v);
+	void Sprint(set<int>v);
+
 	int pivotIndex(vector<int>& nums);
 	int searchInsert(vector<int>& nums, int target);
 	vector<vector<int>> merge(vector<vector<int>>& intervals);
@@ -20,5 +23,8 @@ public:
 	string longestPalindrome(string s);
 	string reverseWords(string s);
 	int strStr(string haystack, string needle);
+	int temperatureTrend(vector<int>& temperatureA, vector<int>& temperatureB);
+	int transportationHub(vector<vector<int>>& path);
+	vector<vector<int>> ballGame(int num, vector<string>& plate);
 };
 

@@ -107,6 +107,77 @@ void test10()
 	cout << res << endl;
 }
 
+void vs01()
+{
+	Solution sln;
+	vector<int>temperatureA = { 5, 10, 16, -6, 15, 11, 3 };
+	vector<int>temperatureB = { 16,22,23,23,25,3,-16 };
+
+	int res = sln.temperatureTrend(temperatureA, temperatureB);
+	cout << res << endl;
+
+
+}
+
+void vs02()
+{
+	Solution sln;
+	vector<vector<int>>path = { {0, 1}, { 0,3 }, { 1,3 }, { 2,0 }, { 2,3 } };		//3
+	vector<vector<int>>path2 = { {0,3},{1,0},{1,3},{2,0},{3,0},{3,2} };			//-1
+
+	int res1 = sln.transportationHub(path);
+	int res2 = sln.transportationHub(path2);
+	cout << res1 << endl;
+	cout << res2<< endl;
+
+
+}
+
+void vs03()
+{
+	Solution sln;
+	int num = 4;
+	vector<string>plate = { "..E.", ".EOW", "..W." };
+	vector<vector<int>>res = sln.ballGame(num, plate);
+	sln.VVprint(res);
+
+	int num2 = 5;
+	vector<string>plate2 = { ".....","..E..",".WO..","....." };
+	vector<vector<int>>res2 = sln.ballGame(num2, plate2);
+	sln.VVprint(res2);
+
+	int num3 = 3;
+	vector<string>plate3 = { ".....","....O","....O","....." };
+	vector<vector<int>>res3 = sln.ballGame(num3, plate3);
+	sln.VVprint(res3);
+
+	int num4 = 1;
+	cout << "res4" << endl;
+	vector<string>plate4 = { ".....", "..O..", "....." };
+	vector<vector<int>>res4 = sln.ballGame(num4, plate4);
+	sln.VVprint(res4);
+
+	int num5 = 41;
+	cout << "res5" << endl;
+	vector<string>plate5 = { "E...W..WW", ".E...O...", "...WO...W", "..OWW.O..", ".W.WO.W.E", "O..O.W...", ".OO...W..", "..EW.WEE." };
+	vector<vector<int>>res5 = sln.ballGame(num5, plate5);
+	sln.VVprint(res5);
+
+
+}
+void vs04()
+{
+	Solution sln;
+
+}
+
+void vs05()
+{
+	Solution sln;
+
+}
+
+
 int main()
 {
 	//test01();
@@ -118,7 +189,12 @@ int main()
 	//test07();
 	//test08();
 	//test09();
-	test10();
+	//test10();
+	//vs01();
+	//vs02();
+	vs03();
+	//vs04();
+	//vs05();
 
 	system("pause");
 	return 0;

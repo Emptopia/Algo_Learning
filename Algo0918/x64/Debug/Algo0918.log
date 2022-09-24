@@ -9,4 +9,7 @@ D:\c++_project\AlgorithmLerning\Algo0918\Solution.cpp(142,23): warning C4267: �
 D:\c++_project\AlgorithmLerning\Algo0918\Solution.cpp(206,18): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\c++_project\AlgorithmLerning\Algo0918\Solution.cpp(259,2): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\c++_project\AlgorithmLerning\Algo0918\Solution.cpp(286,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo0918\Solution.cpp(312,31): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo0918\Solution.cpp(395,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo0918\Solution.cpp(396,30): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Algo0918.vcxproj -> D:\c++_project\AlgorithmLerning\Algo0918\x64\Debug\Algo0918.exe
