@@ -1,25 +1,25 @@
 #include "Solution.h"
-void Solution::Vprint(vector<int>v)
-{
-	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
-	{
-		cout << *it << " ";
-	}
-	cout << endl;
-}
-
-void Solution::VVprint(vector<vector<int>>v)
-{
-	for (vector<vector<int>>::iterator it = v.begin(); it != v.end(); it++)
-	{
-		for (vector<int>::iterator itt = it->begin(); itt != it->end(); itt++)
-		{
-			cout << *itt << " ";
-		}
-		cout << endl;
-	}
-	cout << endl;
-}
+//void Solution::Vprint(vector<int>v)
+//{
+//	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+//	{
+//		cout << *it << " ";
+//	}
+//	cout << endl;
+//}
+//
+//void Solution::VVprint(vector<vector<int>>v)
+//{
+//	for (vector<vector<int>>::iterator it = v.begin(); it != v.end(); it++)
+//	{
+//		for (vector<int>::iterator itt = it->begin(); itt != it->end(); itt++)
+//		{
+//			cout << *itt << " ";
+//		}
+//		cout << endl;
+//	}
+//	cout << endl;
+//}
 
 int Solution::pivotIndex(vector<int>& nums)
 {
@@ -488,4 +488,47 @@ vector<vector<int>> Solution::ballGame(int num, vector<string>& plate)
 
 	}
 	return res;
+}
+
+void Solution::reverseString(vector<char>& s)
+{
+	int right = s.size() - 1;
+	for (int i = 0; i < right; i++)
+	{
+		char temp = s[i];
+		s[i] = s[right];
+		s[right] = temp;
+		right--;
+	}
+
+}
+
+int Solution::arrayPairSum(vector<int>& nums)
+{
+	int res = 0;
+	sort(nums.begin(), nums.end());
+	for (int i = 0; i < nums.size()-1; i++)
+	{
+		res += min(nums[i], nums[i + 1]);
+		i++;
+	}
+
+
+	return res;
+}
+
+vector<int> Solution::twoSum(vector<int>& numbers, int target)
+{
+	int i = 0;
+	int j = numbers.size() - 1;
+	while (i < j)
+	{
+		if (numbers[i] + numbers[j] > target)
+			j--;
+		else if (numbers[i] + numbers[j] < target)
+			i++;
+		else
+			return { i + 1,j + 1 };
+	}
+	return { -1 };
 }

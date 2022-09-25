@@ -8,8 +8,33 @@ using namespace std;
 class Solution
 {
 public:
-	void Vprint(vector<int>v);
-	void VVprint(vector<vector<int>>v);
+
+	template<typename T>
+	void Tprint(vector<T>t1)
+	{
+		for (auto it = t1.begin(); it != t1.end(); it++)
+		{
+			cout << *it << " ";
+		}
+		cout << endl;
+	}
+
+	template<typename T>
+	void TTprint(vector<vector<T>>v)
+	{
+		for (auto it = v.begin(); it != v.end(); it++)
+		{
+			for (auto itt = it->begin(); itt != it->end(); itt++)
+			{
+				cout << *itt << " ";
+			}
+			cout << endl;
+		}
+		cout << endl;
+	}
+
+	//void Vprint(vector<int>v);
+	//void VVprint(vector<vector<int>>v);
 	void Sprint(set<int>v);
 
 	int pivotIndex(vector<int>& nums);
@@ -23,8 +48,13 @@ public:
 	string longestPalindrome(string s);
 	string reverseWords(string s);
 	int strStr(string haystack, string needle);
+
 	int temperatureTrend(vector<int>& temperatureA, vector<int>& temperatureB);
 	int transportationHub(vector<vector<int>>& path);
 	vector<vector<int>> ballGame(int num, vector<string>& plate);
+
+	void reverseString(vector<char>& s);
+	int arrayPairSum(vector<int>& nums);
+	vector<int> twoSum(vector<int>& numbers, int target);
 };
 
