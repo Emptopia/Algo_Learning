@@ -77,3 +77,43 @@ int Solution::minSubArrayLen(int target, vector<int>& nums)
 	return res;
 
 }
+
+vector<vector<int>> Solution::generate(int numRows)
+{
+	vector<vector<int>>res(numRows);
+	if (numRows == 1)
+		return { {1} };
+	if (numRows == 2)
+		return { {1} ,{1,1} };
+	res[0] = { 1 };
+	res[1] = { 1,1 };
+	for (int i = 2; i < numRows; i++)
+	{
+		res[i].resize(i+1);
+		res[i][0] = res[i][i] = 1;
+		for (int j = 1; j < i; j++)
+		{
+			res[i][j] = res[i - 1][j - 1] + res[i - 1][j];
+		}
+	}
+	return res;
+}
+
+vector<int> Solution::getRow(int rowIndex)
+{
+	vector<int> result(rowIndex + 1, 1);
+	if (rowIndex < 2)
+	{
+		return result;
+	}
+	// 需要进行迭代的次数
+	for (int i = 1; i < rowIndex; i++)
+	{
+		// 每次迭代进行的计算
+		for (int j = i; j > 0; j--)
+		{
+			result[j] = result[j] + result[j - 1];
+		}
+	}
+	return result;
+}

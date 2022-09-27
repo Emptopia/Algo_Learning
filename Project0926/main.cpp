@@ -32,17 +32,31 @@ void test03()
 	int target2 = 11;
 	int res2 = sln.minSubArrayLen(target2, nums2);
 	cout << res2 << endl;
+}
 
+void test04()
+{
+	Solution sln;
+	int nums = 5;
+	vector<vector<int>>res = sln.generate(nums);
+	sln.TTprint(res);
+}
 
-
-
+void test05()
+{
+	Solution sln;
+	int nums = 9;
+	vector<int>res = sln.getRow(nums);
+	sln.Tprint(res);
 }
 
 int main()
 {
 	//test01();
 	//test02();
-	test03();
+	//test03();
+	//test04();
+	test05();
 	system("pause");
 	return 0;
 

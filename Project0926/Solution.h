@@ -14,10 +14,21 @@ public:
 			cout << *it << " ";
 		cout << endl;
 	}
-
+	template <typename T>
+	void TTprint(T nums)
+	{
+		for (auto it = nums.begin(); it != nums.end(); it++)
+		{
+			for (auto itt = it->begin(); itt != it->end(); itt++)
+				cout << *itt << " ";
+			cout << endl;
+		}
+	}
 
 	int removeElement(vector<int>& nums, int val);
 	int findMaxConsecutiveOnes(vector<int>& nums);
 	int minSubArrayLen(int target, vector<int>& nums);
+	vector<vector<int>> generate(int numRows);
+	vector<int> getRow(int rowIndex);
 };
 
