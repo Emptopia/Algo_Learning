@@ -1,2 +1,5 @@
-﻿  main.cpp
+﻿  Solution.cpp
+D:\c++_project\AlgorithmLerning\Project0926\Solution.cpp(124,29): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  main.cpp
+  正在生成代码...
   Project0926.vcxproj -> D:\c++_project\AlgorithmLerning\Project0926\x64\Debug\Project0926.exe

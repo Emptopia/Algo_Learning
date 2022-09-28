@@ -30,5 +30,6 @@ public:
 	int minSubArrayLen(int target, vector<int>& nums);
 	vector<vector<int>> generate(int numRows);
 	vector<int> getRow(int rowIndex);
+	int findMin(vector<int>& nums);
 };
 

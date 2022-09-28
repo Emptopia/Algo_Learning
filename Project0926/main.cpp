@@ -50,13 +50,23 @@ void test05()
 	sln.Tprint(res);
 }
 
+void test06()
+{
+	Solution sln;
+	vector<int>nums = { 3, 4, 5, 1, 2 };
+	cout << sln.findMin(nums) << endl;
+		//输出：1
+		//解释：原数组为[1, 2, 3, 4, 5] ，旋转 3 次得到输入数组。
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
 	//test04();
-	test05();
+	//test05();
+	test06();
 	system("pause");
 	return 0;
 
