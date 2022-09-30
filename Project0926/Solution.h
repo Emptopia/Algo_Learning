@@ -31,5 +31,8 @@ public:
 	vector<vector<int>> generate(int numRows);
 	vector<int> getRow(int rowIndex);
 	int findMin(vector<int>& nums);
+	string reverseWords(string s);
+	int removeDuplicates(vector<int>& nums);
+	void moveZeroes(vector<int>& nums);
 };
 

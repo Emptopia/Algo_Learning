@@ -59,6 +59,31 @@ void test06()
 		//解释：原数组为[1, 2, 3, 4, 5] ，旋转 3 次得到输入数组。
 }
 
+void test07()
+{
+	Solution sln;
+	string s = "Let's take LeetCode contest";
+	string res = sln.reverseWords(s);
+	cout << res << endl;
+}
+
+void test08()
+{
+	Solution sln;
+	vector<int>nums = { 0,0,1,1,1,2,2,3,3,4 };
+	int res = sln.removeDuplicates(nums);
+	cout << res << endl;
+	sln.Tprint(nums);
+}
+
+void test09()
+{
+	Solution sln;
+	vector<int>nums = { 0,1,0,3,12 };
+	sln.moveZeroes(nums);
+	sln.Tprint(nums);
+}
+
 int main()
 {
 	//test01();
@@ -66,7 +91,10 @@ int main()
 	//test03();
 	//test04();
 	//test05();
-	test06();
+	//test06();
+	//test07();
+	//test08();
+	test09();
 	system("pause");
 	return 0;
 

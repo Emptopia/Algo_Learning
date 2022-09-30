@@ -134,3 +134,82 @@ int Solution::findMin(vector<int>& nums)
 	return nums[left];    /* 循环结束，left == right，最小值输出nums[left]或nums[right]均可 */
 
 }
+
+string Solution::reverseWords(string s)
+{
+	int left = 0;
+	int right = 0;
+	int pp = 0;
+	while (right<s.size())
+	{
+		right++;
+		if (s[right] == ' ')
+		{
+			pp = right;
+			right--;
+			while (left < right)
+			{
+				char temp = s[left];
+				s[left] = s[right];
+				s[right] = temp;
+				left++;
+				right--;
+			}
+			left = pp+1;
+			right = pp+1;
+		}
+	}
+	right--;
+	while (left < right)
+	{
+		char temp = s[left];
+		s[left] = s[right];
+		s[right] = temp;
+		left++;
+		right--;
+	}
+	return s;
+}
+
+int Solution::removeDuplicates(vector<int>& nums)
+{
+	int left = 0;
+	int right = 1;
+	while (right < nums.size())
+	{
+		if(nums[left] != nums[right])
+		{
+			left++;
+			nums[left] = nums[right];
+		}
+		right++;
+	}
+	return left+1;
+
+}
+
+void Solution::moveZeroes(vector<int>& nums)
+{
+	int left = 0;
+	for (int i = 0; i < nums.size(); i++)
+	{
+		if (nums[i] == 0)
+		{
+			left = i;
+			break;
+		}
+	}
+	if (nums[left] != 0)
+		return;
+	for (int right = left+1; right < nums.size(); right++)
+	{
+		if (nums[right] !=0)
+		{
+			nums[left] = nums[right];
+			nums[right] =0;
+			left++;
+		}
+	}
+
+
+}
