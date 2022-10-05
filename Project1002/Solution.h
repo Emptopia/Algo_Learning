@@ -9,6 +9,7 @@ using namespace std;
 #include<vector>
 #include"Node.h"
 #include<unordered_map>
+#include<set>
 class Solution
 {
 public:
@@ -36,5 +37,11 @@ public:
 	vector<int> reversePrint(ListNode* head);
 	ListNode* reverseList(ListNode* head);
 	Node* copyRandomList(Node* head);
+	string replaceSpace(string s);
+	string reverseLeftWords(string s, int n);
+	int findRepeatNumber(vector<int>& nums);
+	int search(vector<int>& nums, int target);
+	int missingNumber(vector<int>& nums);
+
 };
 
