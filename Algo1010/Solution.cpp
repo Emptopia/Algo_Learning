@@ -72,3 +72,97 @@ char Solution::firstUniqChar(string s)
 	}
 	return ' ';
 }
+
+//void Solution::helper1(TreeNode* root, vector<int>&res)
+//{
+//	res.push_back(root->val);
+//	if (root->left != nullptr)
+//		helper1(root->left,res);
+//	if (root->right != nullptr)
+//		helper1(root->right,res);
+//}
+
+vector<int> Solution::levelOrder(TreeNode* root)
+{
+	//			自己的递归，实现先左后右打印（怪）
+	//if (root == nullptr)
+	//	return {};
+	//vector<int>res;
+	//helper1(root, res);
+	//return res;
+
+	//BFS广度优先搜索   按层打印
+	//队列
+	if (root == nullptr)
+		return {};
+	vector<int>res;
+	queue<TreeNode*>q;
+	q.push(root);
+	while (!q.empty())
+	{
+		TreeNode* temp = q.front();
+		q.pop();
+		res.push_back(temp->val);
+		if (temp->left)
+			q.push(temp->left);
+		if (temp->right)
+			q.push(temp->right);
+	}
+	return res;
+}
+
+vector<vector<int>> Solution::levelOrder2(TreeNode* root)
+{
+	vector<vector<int>>res;
+	if (root == nullptr)
+		return {};
+	queue<TreeNode*>q;
+	q.push(root);
+	vector<int>tmp;
+	while (!q.empty())
+	{
+		for (int i = q.size(); i > 0; i--)
+		{
+			TreeNode* temp = q.front();
+			q.pop();
+			tmp.push_back(temp->val);
+			if (temp->left)
+				q.push(temp->left);
+			if (temp->right)
+				q.push(temp->right);
+		}
+		res.push_back(tmp);
+		tmp = {};
+	}
+	return res;
+
+}
+
+vector<vector<int>> Solution::levelOrder3(TreeNode* root)
+{
+	vector<vector<int>>res;
+	if (root == nullptr)
+		return {};
+	queue<TreeNode*>q;
+	q.push(root);
+	vector<int>tmp;
+	while (!q.empty())
+	{
+		for (int i = q.size(); i > 0; i--)
+		{
+			TreeNode* temp = q.front();
+			q.pop();
+			tmp.push_back(temp->val);
+			if (temp->left)
+				q.push(temp->left);
+			if (temp->right)
+				q.push(temp->right);
+		}
+		if (res.size() % 2 == 1)
+			reverse(tmp.begin(),tmp.end());
+		res.push_back(tmp);
+		tmp = {};
+	}
+	return res;
+
+}
