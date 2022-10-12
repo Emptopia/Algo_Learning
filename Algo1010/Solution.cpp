@@ -166,3 +166,81 @@ vector<vector<int>> Solution::levelOrder3(TreeNode* root)
 	return res;
 
 }
+
+bool Solution::recur(TreeNode* A, TreeNode* B)			
+{
+	//内层遍历		遍历该子树是否包含B
+	//B为空则遍历结束，返回true
+	//A为空或AB值不等，返回false
+	//AB值相等，则继续遍历AB左右子树
+	if (B == nullptr)		//B子树不存在时，不需要比较A
+		return true;
+	if (A == nullptr || A->val != B->val)
+		return false;
+	return recur(A->left, B->left) && recur(A->right, B->right);
+}
+
+bool Solution::isSubStructure(TreeNode* A, TreeNode* B)			
+{
+	//外层遍历
+	//AB为空则false
+	//内层遍历为true时，返回true
+	//A左右子树和B树遍历为true时，返回true
+	return (A != nullptr && B != nullptr) && (recur(A, B) || isSubStructure(A->left, B) || isSubStructure(A->right, B));
+}
+
+void Solution::recur2(TreeNode* Node)
+{
+	if (Node == nullptr)
+		return;
+	TreeNode* temp;
+	if (Node->left != nullptr && Node->right != nullptr)
+	{
+		temp = Node->left;
+		Node->left = Node->right;
+		Node->right = temp;
+	}
+	else if (Node->left != nullptr)
+	{
+		Node->right = Node->left;
+		Node->left = nullptr;
+	}
+	else if (Node->right != nullptr)
+	{
+		Node->left = Node->right;
+		Node->right = nullptr;
+	}
+	recur2(Node->left);
+	recur2(Node->right);
+}
+
+TreeNode* Solution::mirrorTree(TreeNode* root)
+{
+	//官方解法
+	//if (root == nullptr) return nullptr;				//如果遍历到空指针则直接返回
+	//TreeNode* tmp = root->left;						//temp
+	//root->left = mirrorTree(root->right);			//两边交换赋值遍历即可
+	//root->right = mirrorTree(tmp);
+	//return root;
+
+	recur2(root);
+	return root;
+
+}
+
+bool Solution::recur3(TreeNode* A, TreeNode* B)
+{
+	if (A == nullptr && B == nullptr)
+		return true;
+	if (A == nullptr || B == nullptr || A->val != B->val)
+		return false;
+	return recur3(A->left, B->right)&& recur3(A->right, B->left);
+}
+
+
+bool Solution::isSymmetric(TreeNode* root)
+{
+	if (root == nullptr)
+		return true;
+	return recur3(root->left, root->right);
+}

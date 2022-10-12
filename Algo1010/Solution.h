@@ -45,6 +45,16 @@ public:
 	vector<int> levelOrder(TreeNode* root);
 	vector<vector<int>> levelOrder2(TreeNode* root);
 	vector<vector<int>> levelOrder3(TreeNode* root);
+	bool isSubStructure(TreeNode* A, TreeNode* B);
+	TreeNode* mirrorTree(TreeNode* root);
+	bool isSymmetric(TreeNode* root);
+
+
+private:
+	bool recur(TreeNode* A, TreeNode* B);
+	void recur2(TreeNode* Node);
+	bool recur3(TreeNode* A, TreeNode* B);
+
 };
 
 
