@@ -147,6 +147,29 @@ void test09()
 
 }
 
+void test10()
+{
+	Solution sln;
+	cout << sln.fib(5) << endl;
+}
+
+void test11()
+{
+	Solution sln;
+	cout << sln.numWays(7) << endl;
+
+}
+
+void test12()
+{
+
+	Solution sln;
+	vector<int>nums = { 7,1,5,3,6,4 };
+	cout << sln.maxProfit(nums) << endl;
+}
+
+
+
 int main()
 {
 	//test01();
@@ -157,7 +180,10 @@ int main()
 	//test06();
 	//test07();
 	//test08();
-	test09();
+	//test09();
+	//test10();
+	//test11();
+	test12();
 	system("pause");
 	return 0;
 }

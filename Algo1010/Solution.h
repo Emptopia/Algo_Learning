@@ -48,13 +48,17 @@ public:
 	bool isSubStructure(TreeNode* A, TreeNode* B);
 	TreeNode* mirrorTree(TreeNode* root);
 	bool isSymmetric(TreeNode* root);
+	int fib(int n);
+	int numWays(int n);
+	int maxProfit(vector<int>& prices);
+
 
 
 private:
 	bool recur(TreeNode* A, TreeNode* B);
 	void recur2(TreeNode* Node);
 	bool recur3(TreeNode* A, TreeNode* B);
-
+	
 };
 
 

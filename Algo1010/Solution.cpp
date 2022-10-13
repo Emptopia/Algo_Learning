@@ -244,3 +244,61 @@ bool Solution::isSymmetric(TreeNode* root)
 		return true;
 	return recur3(root->left, root->right);
 }
+
+int Solution::fib(int n)
+{
+	if (n == 0)
+		return 0;
+	else if (n == 1)
+		return 1;
+	int a = 0, b = 1, sum = 0;
+	for (int i = 2; i <= n; i++)
+	{
+		sum = (a + b)%1000000007;				//8个0			1000000007 是最小的十位质数。模1000000007，可以保证值永远在int的范围内。
+		a = b;
+		b = sum;
+	}
+	return sum;
+
+}
+
+int Solution::numWays(int n)
+{
+	if (n == 0 || n == 1)
+		return 1;
+	int a = 1, b = 1, sum = 0;				//与斐波那契数列不同处在于    n(0)=0/1
+	for (int i = 2; i <= n; i++)
+	{
+		sum = (a + b) % 1000000007;				//8个0			1000000007 是最小的十位质数。模1000000007，可以保证值永远在int的范围内。
+		a = b;
+		b = sum;
+	}
+	return sum;
+
+}
+
+int Solution::maxProfit(vector<int>& prices)
+{
+	if (prices.empty())
+		return 0;
+	int maxP = 0;
+	int tempP = 0;
+	for (int i = 0; i < prices.size()-1; i++)
+	{
+		tempP += (prices[i+1] - prices[i]);
+		tempP = max(0, tempP);
+		maxP = max(tempP, maxP);
+	}
+	return maxP;
+
+	//题解：动态规划
+	//int cost = INT_MAX, profit = 0;			
+	//for (int price : prices) {
+	//	cost = min(cost, price);						//cost：最低价格的一天
+	//	profit = max(profit, price - cost);		//当前天价格-最低价格      比较      n-1天的最大利润
+	//																前 i 日最大利润 dp[i]等于前 i - 1日最大利润 dp[i-1] 和第i日卖出的最大利润中的最大值。
+	//}
+	//return profit;
+
+
+}
