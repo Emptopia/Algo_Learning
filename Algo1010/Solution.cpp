@@ -1,4 +1,4 @@
-#include "Solution.h"
+ï»¿#include "Solution.h"
 
 bool Solution::findNumberIn2DArray(vector<vector<int>>&matrix, int target)
 {
@@ -6,7 +6,7 @@ bool Solution::findNumberIn2DArray(vector<vector<int>>&matrix, int target)
 		return false;
 	int row = matrix.size();
 	int column = matrix[0].size();
-	//1¡¢±©Á¦
+	//1ã€æš´åŠ›
 	//for (int i = 0; i < row; i++)
 	//{
 	//	for (int j = 0; j < column; j++)
@@ -17,7 +17,7 @@ bool Solution::findNumberIn2DArray(vector<vector<int>>&matrix, int target)
 	//}
 	//return false;
 
-	//2¡¢°´¹æÔò±éÀú					//Á¦¿ÛÅÜÆğÀ´¸üºÄÊ±£¬Ğ¦ËÀ
+	//2ã€æŒ‰è§„åˆ™éå†					//åŠ›æ‰£è·‘èµ·æ¥æ›´è€—æ—¶ï¼Œç¬‘æ­»
 	int i = row - 1;
 	int j = 0;
 	while (i >= 0 && j < column)
@@ -34,7 +34,7 @@ bool Solution::findNumberIn2DArray(vector<vector<int>>&matrix, int target)
 
 int Solution::minArray(vector<int>& numbers)
 {
-	//±©Á¦
+	//æš´åŠ›
 	//for (int i = 0; i < numbers.size()-1; i++)
 	//{
 	//	if (numbers[i] > numbers[i + 1])
@@ -42,7 +42,7 @@ int Solution::minArray(vector<int>& numbers)
 	//}
 	//return numbers[0];
 
-	//¶ş·Ö
+	//äºŒåˆ†
 	int left = 0;
 	int right = numbers.size() - 1;
 	while (left < right)
@@ -84,15 +84,15 @@ char Solution::firstUniqChar(string s)
 
 vector<int> Solution::levelOrder(TreeNode* root)
 {
-	//			×Ô¼ºµÄµİ¹é£¬ÊµÏÖÏÈ×óºóÓÒ´òÓ¡£¨¹Ö£©
+	//			è‡ªå·±çš„é€’å½’ï¼Œå®ç°å…ˆå·¦åå³æ‰“å°ï¼ˆæ€ªï¼‰
 	//if (root == nullptr)
 	//	return {};
 	//vector<int>res;
 	//helper1(root, res);
 	//return res;
 
-	//BFS¹ã¶ÈÓÅÏÈËÑË÷   °´²ã´òÓ¡
-	//¶ÓÁĞ
+	//BFSå¹¿åº¦ä¼˜å…ˆæœç´¢   æŒ‰å±‚æ‰“å°
+	//é˜Ÿåˆ—
 	if (root == nullptr)
 		return {};
 	vector<int>res;
@@ -169,11 +169,11 @@ vector<vector<int>> Solution::levelOrder3(TreeNode* root)
 
 bool Solution::recur(TreeNode* A, TreeNode* B)			
 {
-	//ÄÚ²ã±éÀú		±éÀú¸Ã×ÓÊ÷ÊÇ·ñ°üº¬B
-	//BÎª¿ÕÔò±éÀú½áÊø£¬·µ»Øtrue
-	//AÎª¿Õ»òABÖµ²»µÈ£¬·µ»Øfalse
-	//ABÖµÏàµÈ£¬Ôò¼ÌĞø±éÀúAB×óÓÒ×ÓÊ÷
-	if (B == nullptr)		//B×ÓÊ÷²»´æÔÚÊ±£¬²»ĞèÒª±È½ÏA
+	//å†…å±‚éå†		éå†è¯¥å­æ ‘æ˜¯å¦åŒ…å«B
+	//Bä¸ºç©ºåˆ™éå†ç»“æŸï¼Œè¿”å›true
+	//Aä¸ºç©ºæˆ–ABå€¼ä¸ç­‰ï¼Œè¿”å›false
+	//ABå€¼ç›¸ç­‰ï¼Œåˆ™ç»§ç»­éå†ABå·¦å³å­æ ‘
+	if (B == nullptr)		//Bå­æ ‘ä¸å­˜åœ¨æ—¶ï¼Œä¸éœ€è¦æ¯”è¾ƒA
 		return true;
 	if (A == nullptr || A->val != B->val)
 		return false;
@@ -182,10 +182,10 @@ bool Solution::recur(TreeNode* A, TreeNode* B)
 
 bool Solution::isSubStructure(TreeNode* A, TreeNode* B)			
 {
-	//Íâ²ã±éÀú
-	//ABÎª¿ÕÔòfalse
-	//ÄÚ²ã±éÀúÎªtrueÊ±£¬·µ»Øtrue
-	//A×óÓÒ×ÓÊ÷ºÍBÊ÷±éÀúÎªtrueÊ±£¬·µ»Øtrue
+	//å¤–å±‚éå†
+	//ABä¸ºç©ºåˆ™false
+	//å†…å±‚éå†ä¸ºtrueæ—¶ï¼Œè¿”å›true
+	//Aå·¦å³å­æ ‘å’ŒBæ ‘éå†ä¸ºtrueæ—¶ï¼Œè¿”å›true
 	return (A != nullptr && B != nullptr) && (recur(A, B) || isSubStructure(A->left, B) || isSubStructure(A->right, B));
 }
 
@@ -216,10 +216,10 @@ void Solution::recur2(TreeNode* Node)
 
 TreeNode* Solution::mirrorTree(TreeNode* root)
 {
-	//¹Ù·½½â·¨
-	//if (root == nullptr) return nullptr;				//Èç¹û±éÀúµ½¿ÕÖ¸ÕëÔòÖ±½Ó·µ»Ø
+	//å®˜æ–¹è§£æ³•
+	//if (root == nullptr) return nullptr;				//å¦‚æœéå†åˆ°ç©ºæŒ‡é’ˆåˆ™ç›´æ¥è¿”å›
 	//TreeNode* tmp = root->left;						//temp
-	//root->left = mirrorTree(root->right);			//Á½±ß½»»»¸³Öµ±éÀú¼´¿É
+	//root->left = mirrorTree(root->right);			//ä¸¤è¾¹äº¤æ¢èµ‹å€¼éå†å³å¯
 	//root->right = mirrorTree(tmp);
 	//return root;
 
@@ -254,7 +254,7 @@ int Solution::fib(int n)
 	int a = 0, b = 1, sum = 0;
 	for (int i = 2; i <= n; i++)
 	{
-		sum = (a + b)%1000000007;				//8¸ö0			1000000007 ÊÇ×îĞ¡µÄÊ®Î»ÖÊÊı¡£Ä£1000000007£¬¿ÉÒÔ±£Ö¤ÖµÓÀÔ¶ÔÚintµÄ·¶Î§ÄÚ¡£
+		sum = (a + b)%1000000007;				//8ä¸ª0			1000000007 æ˜¯æœ€å°çš„åä½è´¨æ•°ã€‚æ¨¡1000000007ï¼Œå¯ä»¥ä¿è¯å€¼æ°¸è¿œåœ¨intçš„èŒƒå›´å†…ã€‚
 		a = b;
 		b = sum;
 	}
@@ -266,10 +266,10 @@ int Solution::numWays(int n)
 {
 	if (n == 0 || n == 1)
 		return 1;
-	int a = 1, b = 1, sum = 0;				//Óëì³²¨ÄÇÆõÊıÁĞ²»Í¬´¦ÔÚÓÚ    n(0)=0/1
+	int a = 1, b = 1, sum = 0;				//ä¸æ–æ³¢é‚£å¥‘æ•°åˆ—ä¸åŒå¤„åœ¨äº    n(0)=0/1
 	for (int i = 2; i <= n; i++)
 	{
-		sum = (a + b) % 1000000007;				//8¸ö0			1000000007 ÊÇ×îĞ¡µÄÊ®Î»ÖÊÊı¡£Ä£1000000007£¬¿ÉÒÔ±£Ö¤ÖµÓÀÔ¶ÔÚintµÄ·¶Î§ÄÚ¡£
+		sum = (a + b) % 1000000007;				//8ä¸ª0			1000000007 æ˜¯æœ€å°çš„åä½è´¨æ•°ã€‚æ¨¡1000000007ï¼Œå¯ä»¥ä¿è¯å€¼æ°¸è¿œåœ¨intçš„èŒƒå›´å†…ã€‚
 		a = b;
 		b = sum;
 	}
@@ -291,14 +291,57 @@ int Solution::maxProfit(vector<int>& prices)
 	}
 	return maxP;
 
-	//Ìâ½â£º¶¯Ì¬¹æ»®
+	//é¢˜è§£ï¼šåŠ¨æ€è§„åˆ’
 	//int cost = INT_MAX, profit = 0;			
 	//for (int price : prices) {
-	//	cost = min(cost, price);						//cost£º×îµÍ¼Û¸ñµÄÒ»Ìì
-	//	profit = max(profit, price - cost);		//µ±Ç°Ìì¼Û¸ñ-×îµÍ¼Û¸ñ      ±È½Ï      n-1ÌìµÄ×î´óÀûÈó
-	//																Ç° i ÈÕ×î´óÀûÈó dp[i]µÈÓÚÇ° i - 1ÈÕ×î´óÀûÈó dp[i-1] ºÍµÚiÈÕÂô³öµÄ×î´óÀûÈóÖĞµÄ×î´óÖµ¡£
+	//	cost = min(cost, price);						//costï¼šæœ€ä½ä»·æ ¼çš„ä¸€å¤©
+	//	profit = max(profit, price - cost);		//å½“å‰å¤©ä»·æ ¼-æœ€ä½ä»·æ ¼      æ¯”è¾ƒ      n-1å¤©çš„æœ€å¤§åˆ©æ¶¦
+	//																å‰ i æ—¥æœ€å¤§åˆ©æ¶¦ dp[i]ç­‰äºå‰ i - 1æ—¥æœ€å¤§åˆ©æ¶¦ dp[i-1] å’Œç¬¬iæ—¥å–å‡ºçš„æœ€å¤§åˆ©æ¶¦ä¸­çš„æœ€å¤§å€¼ã€‚
 	//}
 	//return profit;
 
 
+}
+int Solution::maxSubArray(vector<int>& nums)
+{
+	int res = nums[0];
+	int temp = nums[0];					
+	for (int i = 1; i < nums.size(); i++)
+	{
+		if (temp > 0)					//çŠ¶æ€è½¬ç§»æ–¹ç¨‹			temp(ä¹‹å‰çš„å’Œ)å¦‚æœå¤§äº0ï¼Œåˆ™ç»§ç»­åŠ ä¸Šä»Šå¤©ã€‚åä¹‹ï¼Œtempä»ä»Šå¤©å¼€å§‹
+			temp += nums[i];
+		else
+			temp = nums[i];
+		res = max(res, temp);		//æ¯”è¾ƒæ‰€æœ‰å±€éƒ¨æœ€å¤§
+	}
+	return res;
+
+}
+
+int Solution::maxValue(vector<vector<int>>& grid)
+{
+	//çŠ¶æ€è½¬ç§»æ–¹ç¨‹				f(i, j) = max[f(i, jâˆ’1), f(iâˆ’1, j)] + grid(i, j)			//ç¬¬ä¸€è¡Œæˆ–ç¬¬ä¸€åˆ—æ—¶ï¼Œæ— éœ€æ¯”è¾ƒ
+	//å·¦è¾¹æ¥çš„ä¸ä¸Šé¢æ¥çš„  çš„æœ€å¤§ä»·å€¼ï¼ŒåŠ ä¸Šå½“å‰æ ¼ä»·å€¼
+
+	//ç©ºé—´å¤æ‚åº¦é™ä½ï¼š
+	//	ç”±äº dp[i][j]dp[i][j] åªä¸ dp[i - 1][j]dp[iâˆ’1][j], dp[i][j - 1]dp[i][jâˆ’1], grid[i][j]grid[i][j] æœ‰å…³ç³»ï¼Œå› æ­¤å¯ä»¥å°†åŸçŸ©é˜µ gridgrid ç”¨ä½œ dpdp çŸ©é˜µï¼Œå³ç›´æ¥åœ¨ gridgrid ä¸Šä¿®æ”¹å³å¯ã€‚
+	//	åº”ç”¨æ­¤æ–¹æ³•å¯çœå» dpdp çŸ©é˜µä½¿ç”¨çš„é¢å¤–ç©ºé—´ï¼Œå› æ­¤ç©ºé—´å¤æ‚åº¦ä» O(MN)O(MN) é™è‡³ O(1)O(1) ã€‚
+
+	//è‡ªå·±å†™
+	int res = 0;
+	for (int i = 0; i < grid.size(); i++)				//è¡Œ
+	{
+		for (int j = 0; j < grid[0].size(); j++)		//åˆ—
+		{
+			if (i == 0 && j == 0)
+				continue;
+			else if (i == 0)
+				grid[i][j] += grid[i][j - 1];
+			else if (j == 0)
+				grid[i][j] += grid[i - 1][j];
+			else
+				grid[i][j] += max(grid[i - 1][j], grid[i][j - 1]);
+		}
+	}
+	return grid[grid.size() - 1][grid[0].size() - 1];
 }

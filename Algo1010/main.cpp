@@ -168,7 +168,26 @@ void test12()
 	cout << sln.maxProfit(nums) << endl;
 }
 
+void test13()
+{
+	Solution sln;
+	vector<int>nums = { -2,1,-3,4,-1,2,1,-5,4 };
+	cout << sln.maxSubArray(nums) << endl;
+}
 
+void test14()
+{
+	Solution sln;
+	vector<vector<int>>grid =
+	{
+		{1, 3, 1},
+		{1, 5, 1},
+		{4, 2, 1}
+	};
+	cout << sln.maxValue(grid) << endl;
+
+
+}
 
 int main()
 {
@@ -183,7 +202,9 @@ int main()
 	//test09();
 	//test10();
 	//test11();
-	test12();
+	//test12();
+	//test13();
+	test14();
 	system("pause");
 	return 0;
 }

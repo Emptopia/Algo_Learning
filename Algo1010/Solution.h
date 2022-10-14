@@ -51,8 +51,8 @@ public:
 	int fib(int n);
 	int numWays(int n);
 	int maxProfit(vector<int>& prices);
-
-
+	int maxSubArray(vector<int>& nums);
+	int maxValue(vector<vector<int>>& grid);
 
 private:
 	bool recur(TreeNode* A, TreeNode* B);
