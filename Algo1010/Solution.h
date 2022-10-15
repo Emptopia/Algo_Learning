@@ -6,6 +6,7 @@ using namespace std;
 #include<map>
 #include<queue>
 #include<algorithm>
+#include<string>
 struct TreeNode {
 	int val;
 	TreeNode* left;
@@ -53,6 +54,8 @@ public:
 	int maxProfit(vector<int>& prices);
 	int maxSubArray(vector<int>& nums);
 	int maxValue(vector<vector<int>>& grid);
+	int translateNum(int num);
+	int lengthOfLongestSubstring(string s);
 
 private:
 	bool recur(TreeNode* A, TreeNode* B);

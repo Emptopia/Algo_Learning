@@ -189,6 +189,26 @@ void test14()
 
 }
 
+void test15()
+{
+	Solution sln;
+	int num = 12258;
+	cout << sln.translateNum(num) << endl;
+}
+
+void test16()
+{
+	Solution sln;
+	string s = "aab";
+	cout << sln.lengthOfLongestSubstring(s) << endl;
+
+	string s2 = "pwwkew";
+	cout << sln.lengthOfLongestSubstring(s2) << endl;
+	string s3 = "dvdf";
+	cout << sln.lengthOfLongestSubstring(s3) << endl;
+
+}
+
 int main()
 {
 	//test01();
@@ -204,7 +224,9 @@ int main()
 	//test11();
 	//test12();
 	//test13();
-	test14();
+	//test14();
+	//test15();
+	test16();
 	system("pause");
 	return 0;
 }

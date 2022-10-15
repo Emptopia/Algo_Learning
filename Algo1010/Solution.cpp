@@ -345,3 +345,45 @@ int Solution::maxValue(vector<vector<int>>& grid)
 	}
 	return grid[grid.size() - 1][grid[0].size() - 1];
 }
+
+int Solution::translateNum(int num)
+{
+	string s = to_string(num);
+	int a = 1, b = 1, c = 0;
+	for (int i = 2; i <= s.size(); i++)			//这里要取<=      比如：size=2时，需要循环一次，所以需要<=size
+	{
+		string temp = s.substr(i - 2, 2);
+		if (temp.compare("10") >= 0 && temp.compare("25") <= 0)
+			c = a + b;
+		else
+			c = b;				//这里和例解的a  b是相反的
+		a = b;
+		b = c;
+	}
+	return b;
+
+}
+
+int Solution::lengthOfLongestSubstring(string s)
+{
+	unordered_map<char, int>m;				//key：字符			value：字符在m中的索引
+	int temp = 0, res = 0, left = -1;			//temp记录至今的无重复子串长度即可
+	for (int i = 0; i < s.size(); i++)
+	{
+		if (m.find(s[i]) == m.end())				//left表示上一个相同元素的索引，找不到则返回-1
+			left = -1;
+		else
+			left = m[s[i]];
+		m[s[i]] = i;					//将哈希表中代表的索引更新
+		if (temp<i-left)				//动态规划：left在上一个dp的左边时，dp++
+		{
+			temp++;
+		}
+		else
+		{
+			temp = i - left;			//反之，dp为左右索引的差
+		}
+		res = max(temp, res);
+	}
+	return res;
+}
