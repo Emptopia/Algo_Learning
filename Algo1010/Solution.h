@@ -15,6 +15,13 @@ struct TreeNode {
 
 };
 
+struct ListNode {
+	int val;
+	ListNode* next;
+	ListNode(int x) : val(x), next(NULL) {}
+	
+};
+
 class Solution
 {
 public:
@@ -38,6 +45,8 @@ public:
 		}
 		cout << endl;
 	}
+	void LNprint(ListNode* head);
+
 	bool findNumberIn2DArray(vector<vector<int>>& matrix, int target);
 	int minArray(vector<int>& numbers);
 	char firstUniqChar(string s);
@@ -56,6 +65,8 @@ public:
 	int maxValue(vector<vector<int>>& grid);
 	int translateNum(int num);
 	int lengthOfLongestSubstring(string s);
+	ListNode* deleteNode(ListNode* head, int val);
+	ListNode* getKthFromEnd(ListNode* head, int k);
 
 private:
 	bool recur(TreeNode* A, TreeNode* B);

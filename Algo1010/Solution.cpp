@@ -387,3 +387,49 @@ int Solution::lengthOfLongestSubstring(string s)
 	}
 	return res;
 }
+
+void Solution::LNprint(ListNode* head)
+{
+	while (head != nullptr)
+	{
+		cout << head->val << " ";
+		head = head->next;
+	}
+	cout << endl;
+}
+
+
+ListNode* Solution::deleteNode(ListNode* head, int val) 
+{
+	if (head->val == val)
+		return head->next;
+	ListNode* temp = head;
+	while (temp != nullptr)
+	{
+		if (temp->next->val == val)
+		{
+			temp->next = temp->next->next;
+			break;
+		}
+		temp = temp->next;
+	}
+	return head;
+
+}
+
+ListNode* Solution::getKthFromEnd(ListNode* head, int k)
+{
+	ListNode* pre = head;
+	ListNode* cur = pre;
+	for (int i = 0; i < k; i++)
+	{
+		cur = cur->next;
+	}
+	while (cur != nullptr)
+	{
+		pre = pre->next;
+		cur = cur->next;
+	}
+	return pre;
+
+}

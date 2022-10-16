@@ -209,6 +209,44 @@ void test16()
 
 }
 
+void test17()
+{
+	ListNode* L1 = new ListNode(4);
+	ListNode* L2 = new ListNode(5);
+	ListNode* L3 = new ListNode(1);
+	ListNode* L4 = new ListNode(9);
+
+	L1->next = L2;
+	L2->next = L3;
+	L3->next = L4;
+	int val = 5;
+	Solution sln;
+	sln.LNprint(L1);
+	ListNode* head = sln.deleteNode(L1, val);
+	sln.LNprint(head);
+
+}
+
+void test18()
+{
+	ListNode* L1 = new ListNode(1);
+	ListNode* L2 = new ListNode(2);
+	ListNode* L3 = new ListNode(3);
+	ListNode* L4 = new ListNode(4);
+	ListNode* L5 = new ListNode(5);
+
+	L1->next = L2;
+	L2->next = L3;
+	L3->next = L4;
+	L4->next = L5;
+
+	int k = 2;
+	Solution sln;
+	ListNode* head = sln.getKthFromEnd(L1, k);
+	sln.LNprint(head);
+
+}
+
 int main()
 {
 	//test01();
@@ -226,7 +264,9 @@ int main()
 	//test13();
 	//test14();
 	//test15();
-	test16();
+	//test16();
+	//test17();
+	test18();
 	system("pause");
 	return 0;
 }
