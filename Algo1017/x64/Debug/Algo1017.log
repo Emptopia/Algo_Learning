@@ -1,2 +1,7 @@
-﻿  main.cpp
+﻿  Solution.cpp
+D:\c++_project\AlgorithmLerning\Algo1017\Solution.cpp(139,39): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1017\Solution.cpp(161,26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1017\Solution.cpp(173,22): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1017\Solution.cpp(273,22): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1017\Solution.cpp(274,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Algo1017.vcxproj -> D:\c++_project\AlgorithmLerning\Algo1017\x64\Debug\Algo1017.exe

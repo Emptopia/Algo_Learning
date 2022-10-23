@@ -160,6 +160,24 @@ void test10()
 	cout << sln.kthLargest(N1, 1) << endl;
 }
 
+void test11()
+{
+	Solution sln;
+	//vector<int>nums = { 10 };
+	vector<int>nums = { 3,30,34,5,9 };
+	string res  = sln.minNumber(nums);
+	cout << res << endl;
+}
+
+void test12()
+{
+	Solution sln;
+	//vector<int>nums = { 8,7,11,0,9 };
+	vector<int>nums = { 0,0,2,2,5 };
+	cout << sln.isStraight(nums) << endl;
+
+}
+
 int main()
 {
 	//test01();
@@ -171,7 +189,9 @@ int main()
 	//test07();
 	//test08();
 	//test09();
-	test10();
+	//test10();
+	//test11();
+	test12();
 	system("pause");
 	return 0;
 

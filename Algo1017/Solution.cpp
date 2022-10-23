@@ -381,3 +381,45 @@ int Solution::kthLargest(TreeNode* root, int k)
 	recur5(root);
 	return nums[nums.size() - k];
 }
+
+bool cmp1(string& s1,  string& s2)
+{
+	//分文件编写会出问题，很怪，好像得声明在类外
+	//返回不等式的选择：     写出新规则下   成员1(s1)更小时，返回1的不等式(s1<s2)
+	return s1 + s2 < s2 + s1;
+}
+
+
+string Solution::minNumber(vector<int>& nums)
+{
+	vector<string>strs;
+	string res;
+	for (int i = 0; i < nums.size(); i++)
+	{
+		strs.push_back(to_string(nums[i]));
+	}
+	sort(strs.begin(), strs.end(),cmp1);		//ps：greater<int>()自带的降序函数规则
+	for (int i = 0; i < strs.size(); i++)
+	{
+		res.append(strs[i]);
+	}
+	return res;
+
+}
+
+bool Solution::isStraight(vector<int>& nums)
+{
+	set<int>s;
+	int mi = 14;
+	int ma = 0;
+	for (int i = 0; i < nums.size(); i++)
+	{
+		if (nums[i] == 0)continue;
+		mi = min(mi, nums[i]);
+		ma = max(ma, nums[i]);
+		if (s.find(nums[i]) != s.end())return false;
+		s.insert(nums[i]);
+	}
+	if (ma - mi < 5)return true;
+	else return false;
+}

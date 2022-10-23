@@ -3,6 +3,9 @@
 using namespace std;
 #include<vector>
 #include<unordered_map>
+#include<string>
+#include<algorithm>
+#include<set>
 struct ListNode {
 	int val;
 	ListNode* next;
@@ -76,6 +79,8 @@ public:
 	vector<vector<int>> pathSum(TreeNode* root, int target);
 	Node* treeToDoublyList(Node* root);
 	int kthLargest(TreeNode* root, int k);
+	string minNumber(vector<int>& nums);
+	bool isStraight(vector<int>& nums);
 
 private:
 	bool dp1(vector<vector<char>>& board, string& word,int i, int j, int k);
