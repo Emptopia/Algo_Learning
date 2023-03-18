@@ -1,0 +1,6 @@
+﻿  Solution.cpp
+D:\c++_project\AlgorithmLerning\Algo0313\Solution.cpp(103,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo0313\Solution.cpp(132,29): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  main.cpp
+  正在生成代码...
+  Algo0313.vcxproj -> D:\c++_project\AlgorithmLerning\Algo0313\x64\Debug\Algo0313.exe

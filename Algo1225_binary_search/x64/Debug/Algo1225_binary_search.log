@@ -1,0 +1,10 @@
+﻿  main.cpp
+D:\c++_project\AlgorithmLerning\Algo1225_binary_search\Solution.h(14,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1225_binary_search\Solution.h(32,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1225_binary_search\Solution.h(45,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1225_binary_search\Solution.h(58,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1225_binary_search\Solution.h(74,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1225_binary_search\Solution.h(87,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1225_binary_search\Solution.h(99,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c++_project\AlgorithmLerning\Algo1225_binary_search\Solution.h(111,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  Algo1225_binary_search.vcxproj -> D:\c++_project\AlgorithmLerning\Algo1225_binary_search\x64\Debug\Algo1225_binary_search.exe

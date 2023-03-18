@@ -45,11 +45,61 @@ void test03()
 
 }
 
+void test04()
+{
+	vector<int>preorder = { 3,9,20,15,7 };
+	vector<int>inorder = { 9,3,15,20,7 };
+	Solution sln;
+	TreeNode* root = sln.buildTree(preorder, inorder);
+	cout << root->val << endl;
+
+
+}
+
+void test05()
+{
+	Solution sln;
+	double x = 2.10000;
+	int n = 3;
+	double res = sln.myPow(x, n);
+	cout << res << endl;
+
+}
+
+void test06()
+{
+	Solution sln;
+	vector<int>postorder = { 1,3,2,6,5 };
+	cout << sln.verifyPostorder(postorder) << endl;
+}
+
+void test07()
+{
+	Solution sln;
+	uint32_t n = 00000000000000000000000000001011;
+	int res = sln.hammingWeight(n);
+	cout << res << endl;
+}
+
+void test08()
+{
+	Solution sln;
+	int a = 1;
+	int b = 1;
+	int res = sln.add(a, b);
+	cout << res << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
-	test03();
+	//test03();
+	//test04();
+	//test05();
+	//test06();
+	//test07();
+	test08();
 	system("pause");
 	return 0;
 
