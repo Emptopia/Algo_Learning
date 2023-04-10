@@ -148,6 +148,7 @@ ListNode* Solution::getKthFromEnd(ListNode* head, int k)
 
 string Solution::replaceSpace(string s)
 {
+	a = 5;
 	string res;
 	for (int i = 0; i < s.size(); i++)
 	{
