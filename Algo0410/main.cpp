@@ -33,9 +33,30 @@ void test02()
 
 }
 
+void test03()
+{
+	string s1 = "A man, a plan, a canal: Panama";
+	string s2 = "race a car";
+	string s3 = "0p";
+	Solution sln;
+	cout << sln.isPalindrome(s1) << endl;
+	cout << sln.isPalindrome(s2) << endl;
+	cout << sln.isPalindrome(s3) << endl;
+}
+
+void test04()
+{
+	Solution sln;
+	string ransomNote = "aa";
+	string magazine = "aab";
+	cout << sln.canConstruct(ransomNote, magazine) << endl;
+}
+
 int main()
 {
-	test01();
-	test02();
+	//test01();
+	//test02();
+	//test03();
+	test04();
 	return 0;
 }

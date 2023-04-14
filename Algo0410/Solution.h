@@ -11,6 +11,12 @@ struct TreeNode {
 	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 	TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
+struct ListNode {
+	int val;
+	ListNode* next;
+	ListNode(int x) : val(x), next(NULL) {}
+	
+};
 
 class CQueue {
 public:
@@ -44,5 +50,8 @@ class Solution
 {
 public:
 	bool hasPathSum(TreeNode* root, int targetSum);
+	bool isPalindrome(string s);
+	ListNode* reverseList(ListNode* head);
+	bool canConstruct(string ransomNote, string magazine);
 };
 

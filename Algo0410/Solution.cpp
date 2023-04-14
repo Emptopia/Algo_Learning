@@ -39,3 +39,57 @@ bool Solution::hasPathSum(TreeNode* root, int targetSum)
         hasPathSum(root->right, targetSum - root->val);
 
 }
+
+bool Solution::isPalindrome(string s)
+{
+    //原数组上更改
+    int left = 0, right = s.size() - 1;
+    while (left < right)
+    {
+        while (left < right && !isalnum(s[left]))left++;
+        while (left < right && !isalnum(s[right]))right--;
+        if (left < right)
+        {
+            //cout << (char)tolower(s[left]) << "  " << (char)tolower(s[right]) << endl;
+            if (tolower(s[left]) != tolower(s[right]))
+            {
+                return false;
+            }
+            left++;
+            right--;
+        }
+    }
+    return true;
+
+
+}
+
+ListNode* Solution::reverseList(ListNode* head)
+{
+    ListNode* pre = head;
+    ListNode* cur = nullptr;
+    while (pre)
+    {
+        ListNode* temp = pre->next;
+        pre->next = cur;
+        cur = pre;
+        pre = temp;
+    }
+    return cur;
+}
+
+bool Solution::canConstruct(string ransomNote, string magazine)
+{
+    if (ransomNote.size() > magazine.size())return false;
+    vector<int>cnt(26);
+    for (int i = 0; i < magazine.size(); i++)
+    {
+        cnt[magazine[i] - 'a']++;
+    }
+    for (int i = 0; i < ransomNote.size(); i++)
+    {
+        cnt[ransomNote[i] - 'a']--;
+        if (cnt[ransomNote[i] - 'a'] < 0)return false;
+    }
+    return true;
+}
