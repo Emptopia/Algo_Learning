@@ -52,11 +52,20 @@ void test04()
 	cout << sln.canConstruct(ransomNote, magazine) << endl;
 }
 
+void test05()
+{
+	Solution sln;
+	string a = "1010";
+	string b = "1011";
+	cout << sln.addBinary(a, b) << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
-	test04();
+	//test04();
+	test05();
 	return 0;
 }

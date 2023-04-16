@@ -93,3 +93,37 @@ bool Solution::canConstruct(string ransomNote, string magazine)
     }
     return true;
 }
+
+string Solution::addBinary(string a, string b)
+{
+    int i = a.size() - 1;
+    int j = b.size() - 1;
+    string res;
+    int carry = 0;
+    while (i >= 0 && j >= 0)
+    {
+        int sum = carry;
+        sum += a[i--] - '0';
+        sum += b[j--] - '0';
+        carry = sum / 2;
+        res += to_string(sum % 2);
+    }
+  
+    while (i >= 0)
+    {
+        int sum = carry + a[i--] - '0';
+        carry = sum / 2;
+        res += to_string(sum % 2);
+    }
+    while (j >= 0)
+    {
+        int sum = carry + b[j--] - '0';
+        carry = sum / 2;
+        res += to_string(sum % 2);
+    }
+    if (carry == 1)res += "1";
+    
+    reverse(res.begin(), res.end());
+    
+    return res;
+}

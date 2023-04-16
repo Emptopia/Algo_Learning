@@ -3,6 +3,7 @@
 using namespace std;
 #include<queue>
 #include<stack>
+#include<string>
 struct TreeNode {
 	int val;
 	TreeNode* left;
@@ -53,5 +54,6 @@ public:
 	bool isPalindrome(string s);
 	ListNode* reverseList(ListNode* head);
 	bool canConstruct(string ransomNote, string magazine);
+	string addBinary(string a, string b);
 };
 
