@@ -60,12 +60,33 @@ void test05()
 	cout << sln.addBinary(a, b) << endl;
 }
 
+void test06()
+{
+	Solution sln;
+	vector<int>n1 = { 1,2,2,1 };
+	vector<int>n2 = { 2,2 };
+	vector<int>n3 = { 4,9,5 };
+	vector<int>n4 = { 9,4,9,8,4 };
+	vector<int>res1 = sln.intersection(n1, n2);
+	vector<int>res2 = sln.intersection(n3, n4);
+	sln.Tprint(res1);
+	sln.Tprint(res2);
+}
+
+void test07()
+{
+	Solution sln;
+	cout << sln.fib(5) << endl;
+}
+
 int main()
 {
 	//test01();
 	//test02();
 	//test03();
 	//test04();
-	test05();
+	//test05();
+	//test06();
+	test07();
 	return 0;
 }

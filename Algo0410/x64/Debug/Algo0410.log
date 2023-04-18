@@ -1,5 +1,2 @@
-﻿  Solution.cpp
-D:\c++_project\AlgorithmLerning\Algo0410\Solution.cpp(46,39): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\c++_project\AlgorithmLerning\Algo0410\Solution.cpp(99,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\c++_project\AlgorithmLerning\Algo0410\Solution.cpp(100,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  main.cpp
   Algo0410.vcxproj -> D:\c++_project\AlgorithmLerning\Algo0410\x64\Debug\Algo0410.exe

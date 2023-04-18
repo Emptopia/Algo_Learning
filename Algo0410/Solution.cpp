@@ -127,3 +127,42 @@ string Solution::addBinary(string a, string b)
     
     return res;
 }
+
+vector<int> Solution::intersection(vector<int>& nums1, vector<int>& nums2)
+{
+    vector<int>res;
+    unordered_map<int, int>m;
+    for (int i = 0; i < nums1.size(); i++)
+    {
+        if (m[nums1[i]] ==0)
+        {
+            m[nums1[i]]=1;
+        }
+    }
+    for (int i = 0; i < nums2.size(); i++)
+    {
+        if (m[nums2[i]] == 1)
+        {
+            res.push_back(nums2[i]);
+            m[nums2[i]]++;
+        }
+    }
+
+
+    return res;
+}
+
+int Solution::fib(int n)
+{
+    const int mod = 1e9 + 7;
+    if (n == 0)return 0;
+    if (n == 1)return 1;
+    int a = 0, b = 1, sum;
+    for (int i = 2; i <= n; i++)
+    {
+        sum = (a + b) % mod;
+        a = b;
+        b = sum;
+    }
+    return sum;
+}
