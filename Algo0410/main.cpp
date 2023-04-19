@@ -79,6 +79,13 @@ void test07()
 	cout << sln.fib(5) << endl;
 }
 
+
+void test08()
+{
+	Solution sln;
+	cout << sln.isHappy(19) << endl;
+	cout << sln.isHappy(2) << endl;
+}
 int main()
 {
 	//test01();
@@ -87,6 +94,7 @@ int main()
 	//test04();
 	//test05();
 	//test06();
-	test07();
+	//test07();
+	test08();
 	return 0;
 }

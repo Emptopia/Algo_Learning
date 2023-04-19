@@ -69,5 +69,10 @@ public:
 	string addBinary(string a, string b);
 	vector<int> intersection(vector<int>& nums1, vector<int>& nums2);
 	int fib(int n);
+	bool isHappy(int n);
+
+
+private:
+	int plus(int n);
 };
 

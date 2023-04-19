@@ -166,3 +166,48 @@ int Solution::fib(int n)
     }
     return sum;
 }
+int Solution::plus(int n)
+{
+    int sum = 0;
+    while (n != 0)
+    {
+        int bit = n % 10;
+        sum += bit * bit;
+        n /= 10;
+    }
+    return sum;
+}
+
+
+bool Solution::isHappy(int n)
+{
+    //哈希   时间logn 空间logn
+    //unordered_set<int>s;
+    //while (true)
+    //{
+    //    int res = 0;
+    //    while (n != 0)
+    //    {
+    //        res += (n % 10) * (n % 10);
+    //        n /= 10;
+    //    }
+    //    n = res;
+    //    //cout << res << endl;
+    //    if (res == 1)return true;
+    //    if (s.count(res))return false;
+    //    s.insert(res);
+    //}
+    //return false;
+
+    //快慢指针  时间logn 空间O(1)
+    int p1 = n, p2 = n;
+    do
+    {
+        p1 = plus(p1);
+        p2 = plus(p2);
+        p2 = plus(p2);
+    } while (p1!=p2);
+
+    return p1 == 1;
+
+}
