@@ -86,6 +86,30 @@ void test08()
 	cout << sln.isHappy(19) << endl;
 	cout << sln.isHappy(2) << endl;
 }
+
+void test09()
+{
+	Solution sln;
+	string s1 = "abc";
+	string t1 = "ahbgdc";
+	string s2 = "axc";
+	string t2 = "ahbgdc";
+	cout << sln.isSubsequence(s1, t1) << endl;
+	cout << sln.isSubsequence(s2, t2) << endl;
+
+}
+
+void test10()
+{
+	Solution sln;
+	TreeNode* t1 = new TreeNode(3);
+	TreeNode* t2 = new TreeNode(2, t1, nullptr);
+	TreeNode* t3 = new TreeNode(1, nullptr, t2);
+	vector<int>res = sln.postorderTraversal(t3);
+	sln.Tprint(res);
+
+
+}
 int main()
 {
 	//test01();
@@ -95,6 +119,8 @@ int main()
 	//test05();
 	//test06();
 	//test07();
-	test08();
+	//test08();
+	//test09();
+	test10();
 	return 0;
 }

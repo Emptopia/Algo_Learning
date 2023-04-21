@@ -70,9 +70,10 @@ public:
 	vector<int> intersection(vector<int>& nums1, vector<int>& nums2);
 	int fib(int n);
 	bool isHappy(int n);
-
-
+	bool isSubsequence(string s, string t);
+	vector<int> postorderTraversal(TreeNode* root);
 private:
 	int plus(int n);
+	void order(TreeNode* root, vector<int>&res);
 };
 

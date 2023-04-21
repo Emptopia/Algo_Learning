@@ -211,3 +211,59 @@ bool Solution::isHappy(int n)
     return p1 == 1;
 
 }
+
+bool Solution::isSubsequence(string s, string t)
+{
+    int i = 0;
+    for (int j = 0; j < t.size(); j++)
+    {
+        if (s[i] == t[j])i++;
+        if (i == s.size())break;
+    }
+
+    return i == s.size();
+}
+void Solution::order(TreeNode* root, vector<int>&res)
+{
+    if (!root)return;
+    order(root->left, res);
+    order(root->right, res);
+    res.push_back(root->val);
+}
+
+vector<int> Solution::postorderTraversal(TreeNode* root)
+{
+    //vector<int>res;
+    //order(root, res);
+    //return res;
+    vector<int>res;
+    if (!root)return res;
+    stack<TreeNode*>s;
+    TreeNode* prev = nullptr;
+
+    while (root || !s.empty())
+    {
+        //有左则先遍历左
+        while (root)
+        {
+            s.push(root);
+            root = root->left;
+        }
+        root = s.top();
+        s.pop();
+        if (root->right == nullptr || root->right == prev)
+        {
+            res.push_back(root->val);
+            //如果不标记，回到上一级又会进入右遍历循环
+            prev = root;
+            root = nullptr;
+        }
+        else
+        {
+            //右存在且未遍历，重新压入root，再遍历右
+            s.push(root);
+            root = root->right;
+        }
+    }
+    return res;
+}
