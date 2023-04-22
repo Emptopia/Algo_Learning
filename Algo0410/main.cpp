@@ -110,6 +110,14 @@ void test10()
 
 
 }
+
+void test11()
+{
+	Solution sln;
+	vector<int>nums = { 5,7,7,8,8,10 };
+	int target = 8;
+	cout << sln.search(nums, target) << endl;
+}
 int main()
 {
 	//test01();
@@ -121,6 +129,7 @@ int main()
 	//test07();
 	//test08();
 	//test09();
-	test10();
+	//test10();
+	test11();
 	return 0;
 }

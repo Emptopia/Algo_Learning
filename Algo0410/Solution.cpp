@@ -166,6 +166,7 @@ int Solution::fib(int n)
     }
     return sum;
 }
+
 int Solution::plus(int n)
 {
     int sum = 0;
@@ -177,7 +178,6 @@ int Solution::plus(int n)
     }
     return sum;
 }
-
 
 bool Solution::isHappy(int n)
 {
@@ -223,6 +223,7 @@ bool Solution::isSubsequence(string s, string t)
 
     return i == s.size();
 }
+
 void Solution::order(TreeNode* root, vector<int>&res)
 {
     if (!root)return;
@@ -266,4 +267,23 @@ vector<int> Solution::postorderTraversal(TreeNode* root)
         }
     }
     return res;
+}
+
+int Solution::helper(vector<int>& nums, int target)
+{
+    int l = 0, r = nums.size() - 1;
+    while (l <= r)
+    {
+        int m = l + (r - l) / 2;
+        //找右边界，相等时右移
+        if (nums[m] <= target) l = m + 1;
+        else r = m - 1;
+    }
+    return l;
+}
+
+int Solution::search(vector<int>& nums, int target)
+{
+    //数组nums均为整数，因此分别查找target和target-1的右边界，相减返回即可
+    return helper(nums, target) - helper(nums, target - 1);
 }
