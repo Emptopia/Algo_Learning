@@ -73,7 +73,8 @@ public:
 	bool isSubsequence(string s, string t);
 	vector<int> postorderTraversal(TreeNode* root);
 	int search(vector<int>& nums, int target);
-
+	vector<int> exchange(vector<int>& nums);
+	int minArray(vector<int>& numbers);
 
 
 
@@ -81,5 +82,6 @@ private:
 	int plus(int n);
 	void order(TreeNode* root, vector<int>&res);
 	int helper(vector<int>& nums, int target);
+	
 };
 

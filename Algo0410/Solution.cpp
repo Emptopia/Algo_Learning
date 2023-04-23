@@ -282,8 +282,40 @@ int Solution::helper(vector<int>& nums, int target)
     return l;
 }
 
+
 int Solution::search(vector<int>& nums, int target)
 {
     //数组nums均为整数，因此分别查找target和target-1的右边界，相减返回即可
     return helper(nums, target) - helper(nums, target - 1);
+}
+
+vector<int> Solution::exchange(vector<int>& nums)
+{
+    int l = 0, r = nums.size() - 1;
+    while (l <= r)
+    {
+        while (l <= r && nums[l] % 2 == 1)l++;
+        while (l <= r && nums[r] % 2 == 0)r--;
+        if (l <= r)
+        {
+            int temp = nums[l];
+            nums[l] = nums[r];
+            nums[r] = temp;
+            l++; r--;
+        }
+    }
+    return nums;
+}
+
+int Solution::minArray(vector<int>& numbers)
+{
+    int l = 0, r = numbers.size() - 1;
+    while (l < r)
+    {
+        int m = l + (r - l) / 2;
+        if (numbers[m] > numbers[r])l = m + 1;
+        else if (numbers[m] < numbers[r]) r = m;//减1会错过旋转点
+        else r--;//缩小判断范围
+    }
+    return numbers[l];
 }

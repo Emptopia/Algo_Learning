@@ -118,6 +118,23 @@ void test11()
 	int target = 8;
 	cout << sln.search(nums, target) << endl;
 }
+
+void test12()
+{
+	Solution sln;
+	vector<int>nums = { 1,2,3,4 };
+	vector<int>res = sln.exchange(nums);
+	sln.Tprint(res);
+
+}
+
+void test13()
+{
+	Solution sln;
+	vector<int>nums = { 3,4,5,1,2 };
+	cout << sln.minArray(nums) << endl;
+}
+
 int main()
 {
 	//test01();
@@ -130,6 +147,8 @@ int main()
 	//test08();
 	//test09();
 	//test10();
-	test11();
+	//test11();
+	//test12();
+	test13();
 	return 0;
 }
