@@ -135,6 +135,33 @@ void test13()
 	cout << sln.minArray(nums) << endl;
 }
 
+void test14()
+{
+	Solution sln;
+	string s = "Let's take LeetCode contest";
+	string res = sln.reverseWords(s);
+	cout << res << endl;
+}
+
+
+void test15()
+{
+	vector<int>a = { 1,2,3,0,0,0 };
+	vector<int>b = { 2,5,6 };
+	Solution sln;
+	sln.merge(a, 3, b, 3);
+	sln.Tprint(a);
+}
+
+void test16()
+{
+	vector<int>v = { 0,0,1,2,4,2,2,3,1,4 };
+	int k = 8;
+	Solution sln;
+	vector<int>res = sln.getLeastNumbers(v, k);
+	sln.Tprint(res);
+}
+
 int main()
 {
 	//test01();
@@ -149,6 +176,9 @@ int main()
 	//test10();
 	//test11();
 	//test12();
-	test13();
+	//test13();
+	//test14();
+	//test15();
+	test16();
 	return 0;
 }

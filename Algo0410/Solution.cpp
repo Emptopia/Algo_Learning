@@ -283,6 +283,8 @@ int Solution::helper(vector<int>& nums, int target)
 }
 
 
+
+
 int Solution::search(vector<int>& nums, int target)
 {
     //数组nums均为整数，因此分别查找target和target-1的右边界，相减返回即可
@@ -318,4 +320,63 @@ int Solution::minArray(vector<int>& numbers)
         else r--;//缩小判断范围
     }
     return numbers[l];
+}
+
+void Solution::rev(string& s, int l, int r)
+{
+    while (l < r)
+    {
+        char temp = s[l];
+        s[l] = s[r];
+        s[r] = temp;
+        l++;
+        r--;
+    }
+}
+
+string Solution::reverseWords(string s)
+{
+    int l = 0, r = 0;
+    while (r < s.size())
+    {
+        while (r < s.size() && s[r] != ' ')r++;
+
+            rev(s, l, r-1);
+            l = r + 1;
+            r = l;
+        
+    }
+    return s;
+}
+
+void Solution::merge(vector<int>& A, int m, vector<int>& B, int n)
+{
+    int tail = m + n - 1, p1 = m - 1, p2 = n - 1;
+    while (p1 >= 0 && p2 >= 0)
+    {
+        if (A[p1] > B[p2])A[tail--] = A[p1--];
+        else A[tail--] = B[p2--];
+    }
+    while (p1 >= 0)A[tail--] = A[p1--];
+    while (p2 >= 0)A[tail--] = B[p2--];
+
+
+}
+
+vector<int> Solution::getLeastNumbers(vector<int>& arr, int k)
+{
+    //排序
+    vector<int>res;
+    sort(arr.begin(), arr.end());
+    int i = 0;
+    while (k > 0)
+    {
+            res.push_back(arr[i]);
+            k--;
+            i++;
+    }
+    return res;
+    //大根堆
+
+    //快排
 }

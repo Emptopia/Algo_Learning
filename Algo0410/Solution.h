@@ -75,13 +75,15 @@ public:
 	int search(vector<int>& nums, int target);
 	vector<int> exchange(vector<int>& nums);
 	int minArray(vector<int>& numbers);
-
-
+	string reverseWords(string s);
+	void merge(vector<int>& A, int m, vector<int>& B, int n);
+	vector<int> getLeastNumbers(vector<int>& arr, int k);
 
 private:
 	int plus(int n);
 	void order(TreeNode* root, vector<int>&res);
 	int helper(vector<int>& nums, int target);
+	void rev(string& s, int l, int r);
 	
 };
 
